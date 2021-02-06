@@ -25,13 +25,18 @@ public class FindTherapistManager {
         
         try{
             String line="";
-            BufferedReader br=new BufferedReader(new FileReader("F:\\behappy\\behappy_old\\src\\main\\java\\com\\mycompany\\behappy\\TherapistDatasetNew.csv"));
+            BufferedReader br=new BufferedReader(new FileReader("F:\\behappy\\behappy\\src\\main\\java\\com\\mycompany\\behappy\\TherapistDatasetNew.csv"));
             line=br.readLine();  
             while ((line = br.readLine()) != null )   //returns a Boolean value  
             {  
             String[] info = line.split(",");
 //                System.out.println(info[9]);
-            Therapist t=new Therapist(info[0],info[3],info[5],info[6],info[1],info[9],info[4],info[7],info[8]);
+            String address="";
+            for (int i = 9; i < info.length; i++) 
+            {
+            address += (info[i] + ",");
+            }
+            Therapist t=new Therapist(info[0],info[3],info[5],info[6],info[1],address,info[4],info[7],info[8]);
 //            System.out.println(Arrays.toString(info));
             arrlist.add(t);
             }   
@@ -55,11 +60,11 @@ public class FindTherapistManager {
     }
     public static void main(String[] args) {
         // TODO code application logic here
-//    FindTherapistManager f=new FindTherapistManager();
-//        ArrayList<Therapist> r=f.recommend("mumbai",6000);
-//        for(int i = 0; i < r.size(); i++) {
-//            System.out.println(r.get(i).getAddress());
-//        }
+    FindTherapistManager f=new FindTherapistManager();
+        ArrayList<Therapist> r=f.recommend("mumbai",6000);
+        for(int i = 0; i < r.size(); i++) {
+            System.out.println(r.get(i).getAddress());
+        }
     }
     
 }

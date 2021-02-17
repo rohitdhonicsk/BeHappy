@@ -44,16 +44,19 @@ public class StartManager {
         return arrlist;
     }
     public String generateRandomString(){
+         @SuppressWarnings("unchecked")
          ArrayList<MotivationalQuote> arrlist=importDatabase();
         Random r=new Random();
         int randomNumber=r.nextInt(arrlist.size());
         return arrlist.get(randomNumber).getQuote();
     }
     public static void main(String[] args) {
-//        new StartUI().setVisible(true);
+        
 //    System.out.println(importDatabse());
-    StartManager s=new StartManager();
-        for(int i=0;i<5;i++)
-        System.out.println(s.generateRandomString());
+//    StartManager s=new StartManager();
+//        for(int i=0;i<5;i++)
+//        System.out.println(s.generateRandomString());
+        new StartUI().setVisible(true);
     }
+
 }

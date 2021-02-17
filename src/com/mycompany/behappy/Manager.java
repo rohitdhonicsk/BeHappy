@@ -1,6 +1,5 @@
 package com.mycompany.behappy;
 
-
 import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

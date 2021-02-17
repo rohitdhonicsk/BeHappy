@@ -11,9 +11,7 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
+
 
 /**
  *
@@ -26,9 +24,7 @@ public class StartUI extends javax.swing.JFrame {
      */
     public StartUI() {
         initComponents();
-//        w.setIcon(new ImageIcon("src/utils/logo.png"));
-//        jLabel1.setIcon(new ImageIcon("src/utils/administrative_tools_64px.png"));
-//        jLabel3.setIcon(new ImageIcon("src/utils/next_100px.png"));
+        this.setLocationRelativeTo(null);
         StartManager sm=new StartManager();
         animate();
 //        JLabel dailyQuote=new JLabel();
@@ -48,15 +44,11 @@ public class StartUI extends javax.swing.JFrame {
         
 //        dailyQuote.setOpaque(true);
 //        dailyQuote.setBackground(Color.red);
-        jTextArea1.setText(sm.generateRandomString());
+        
         jPanel2.add(jScrollPane1);
+        jTextArea1.setText(sm.generateRandomString());
         jPanel2.add(jLabel1);
         jPanel2.add(jLabel3);
-//         SimpleAttributeSet attrs=new SimpleAttributeSet();
-//            StyleConstants.setAlignment(attrs,StyleConstants.ALIGN_CENTER);
-//            StyledDocument doc=(StyledDocument)jTextPane1.getDocument();
-//            doc.setParagraphAttributes(0,doc.getLength()-1,attrs,false);
-//            jTextPane1.setBackground(new Color(176,221,194));
         jLabel1.setBounds(600, 300, 100, 100);
         jLabel3.setBounds(200, 300, 100, 100);
     }
@@ -85,6 +77,7 @@ public class StartUI extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(200, 100));
         setPreferredSize(new java.awt.Dimension(900, 600));
         getContentPane().setLayout(null);
 
@@ -153,7 +146,7 @@ public class StartUI extends javax.swing.JFrame {
         jLabel2.setBounds(0, 0, 33, 13);
 
         jScrollPane1.setBackground(new java.awt.Color(176, 221, 194));
-        jScrollPane1.setBorder(null);
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daily Quote", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Leelawadee UI", 0, 36), new java.awt.Color(0, 88, 81))); // NOI18N
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setToolTipText("");
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -162,13 +155,12 @@ public class StartUI extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(176, 221, 194));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(0, 17, 51));
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(4);
         jTextArea1.setWrapStyleWord(true);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daily Quote", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Leelawadee UI", 0, 24), new java.awt.Color(0, 88, 81))); // NOI18N
-        jTextArea1.setOpaque(false);
+        jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
@@ -224,6 +216,7 @@ public class StartUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new StartUI().setVisible(true);
+                
             }
         });
     }

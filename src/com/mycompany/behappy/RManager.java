@@ -254,8 +254,8 @@ public class RManager {
        assert(ms.size()==2):"Size is "+ms.size();
        ms=r.getSearchedStory("hhhhh");
        assert(ms.size()==0):"Size is "+ms.size();*/      
-       Refreshment_Menu menu=new Refreshment_Menu();
-       menu.setVisible(true);
+//       Refreshment_Menu menu=new Refreshment_Menu();
+//       menu.setVisible(true);
         /*r.getRefreshmentContent("MotivationalStory");
         r.getRefreshmentContent("MotivationalQuote");
         r.getRefreshmentContent("MotivationalSong");

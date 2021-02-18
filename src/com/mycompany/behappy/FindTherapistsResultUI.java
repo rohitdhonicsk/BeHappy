@@ -21,15 +21,16 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
     private String city;
     private int budget;
     int count=0;
-    
-    public FindTherapistsResultUI() {
+    private DisplayManager mgr;
+    public FindTherapistsResultUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
 //        jLabel7.setIcon(new ImageIcon("src/utils/logo.png"));
         
     }
-    public FindTherapistsResultUI(String city,int budget) {
-        initComponents();
+    public void setCB(String city,int budget) {
+        
         
 //        jLabel7.setIcon(new ImageIcon("src/utils/logo.png"));
         this.city=city;
@@ -402,14 +403,16 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new MainMenuUI().setVisible(true);
+     
+        mgr.showMMU();
+        
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new PreferencesUI().setVisible(true);
+        
+        mgr.showPU();
+       
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
@@ -442,7 +445,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FindTherapistsResultUI().setVisible(true);
+               
             }
         });
     }

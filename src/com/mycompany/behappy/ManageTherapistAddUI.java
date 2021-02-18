@@ -28,11 +28,12 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
     String[] AvailDay;
     ManagerMT Mng;
     
-
+   private DisplayManager mgr;
     /**
      * Creates new form SearchTherapistUI
      */
-    public ManageTherapistAddUI() {
+    public ManageTherapistAddUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
         UserData = new Therapist();
@@ -558,20 +559,17 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
 
     private void CancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseClicked
         // TODO add your handling code here:
-        this.dispose();
-        new ManageTherapistMainUI().setVisible(true);
+       mgr.showMTMU();
     }//GEN-LAST:event_CancelMouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new StartUI().setVisible(true);
+        mgr.showSU();
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new ManageTherapistMainUI().setVisible(true);
+        mgr.showMTMU();
     }//GEN-LAST:event_jLabel15MouseClicked
 
     /**
@@ -604,8 +602,8 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ManageTherapistAddUI p = new ManageTherapistAddUI();
-                p.setVisible(true);
+//                ManageTherapistAddUI p = new ManageTherapistAddUI();
+//                p.setVisible(true);
 
             }
         });

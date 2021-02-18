@@ -21,7 +21,9 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
     /**
      * Creates new form SearchTherapistUI
      */
-    public ManageTherapistMainUI() {
+    private DisplayManager mgr;
+    public ManageTherapistMainUI(DisplayManager mgr) {
+       this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
 
@@ -207,14 +209,13 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
 
     private void DeleteTherapistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteTherapistActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        new ManageTherapistDSUUI("Delete").setVisible(true);
+        mgr.showMTDSU("Delete");
+       
     }//GEN-LAST:event_DeleteTherapistActionPerformed
 
     private void SearchTherapistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchTherapistActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        new ManageTherapistDSUUI("Search").setVisible(true);
+        mgr.showMTDSU("Search");
     }//GEN-LAST:event_SearchTherapistActionPerformed
 
     private void UpdateTherapistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTherapistActionPerformed
@@ -223,21 +224,19 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
     }//GEN-LAST:event_UpdateTherapistActionPerformed
 
     private void AddTherapistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddTherapistMouseClicked
-        this.dispose();
-        new ManageTherapistAddUI().setVisible(true);// TODO add your handling code here:
+        mgr.showMTAU();
+        // TODO add your handling code here:
 
     }//GEN-LAST:event_AddTherapistMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new StartUI().setVisible(true);
+       mgr.showSU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new login().setVisible(true);
+        mgr.showL();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
@@ -270,8 +269,7 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ManageTherapistMainUI p = new ManageTherapistMainUI();
-                p.setVisible(true);
+              
 
             }
         });

@@ -66,7 +66,7 @@ public class FindTherapistManager {
 //            System.out.println(r.get(i).getAddress());
 //        }
    
-    new PreferencesUI().setVisible(true);
+//    new PreferencesUI().setVisible(true);
     }
     
 }

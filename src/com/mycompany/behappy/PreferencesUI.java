@@ -19,8 +19,10 @@ public class PreferencesUI extends javax.swing.JFrame {
     /**
      * Creates new form FindTherapistUI
      */
-    public PreferencesUI() {
-     
+    DisplayManager mgr;
+
+    public PreferencesUI(DisplayManager mgr) {
+        this.mgr = mgr;
         initComponents();
         this.setLocationRelativeTo(null);
 //        jLabel1.setIcon(new ImageIcon("src/utils/logo.png"));
@@ -328,45 +330,46 @@ public class PreferencesUI extends javax.swing.JFrame {
         // TODO add your handling code here:
 //        city=jComboBox1.getSelectedItem().toString();
     }//GEN-LAST:event_jComboBox1ActionPerformed
-
+    private void ClearData(){
+        bt1.setText("");
+        this.buttonGroup1.clearSelection();
+        this.buttonGroup2.clearSelection();
+        jComboBox1.setSelectedIndex(0);
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String city=jComboBox1.getSelectedItem().toString();
+        String city = jComboBox1.getSelectedItem().toString();
         int budget;
-        ArrayList<Therapist> therapists=new ArrayList<>();
-        
-        if((grb1.isSelected() || grb2.isSelected()) && (srb1.isSelected() || srb2.isSelected()) && !bt1.getText().equals("") && !(city==null))
-        {
-            budget=Integer.parseInt(bt1.getText());
-            FindTherapistManager ftm=new FindTherapistManager();
-            therapists=ftm.recommend(city, budget);
-            FindTherapistsResultUI ft=new FindTherapistsResultUI(city,budget);
-            
-            if(therapists.size()==0){
-                JOptionPane.showMessageDialog(this,"sorry, we couldn't find any therapist at your location and budget","error 404",JOptionPane.WARNING_MESSAGE);
-            }
-            else{
-                dispose();
-                ft.setVisible(true);
-                ft.showDetails(therapists,0);
+        ArrayList<Therapist> therapists = new ArrayList<>();
+
+        if ((grb1.isSelected() || grb2.isSelected()) && (srb1.isSelected() || srb2.isSelected()) && !bt1.getText().equals("") && !(city == null)) {
+            budget = Integer.parseInt(bt1.getText());
+            FindTherapistManager ftm = new FindTherapistManager();
+            therapists = ftm.recommend(city, budget);
+
+            if (therapists.size() == 0) {
+                JOptionPane.showMessageDialog(this, "sorry, we couldn't find any therapist at your location and budget", "error 404", JOptionPane.WARNING_MESSAGE);
+            } else {
+                this.ClearData();
+                mgr.showFTR(city, budget, therapists);
+
             }
 
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(this, "Please select all preferences!", "Error", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new MainMenuUI().setVisible(true);
+        this.ClearData();
+        mgr.showMMU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new MainMenuUI().setVisible(true);
+        this.ClearData();
+        mgr.showMMU();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
@@ -400,7 +403,7 @@ public class PreferencesUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PreferencesUI().setVisible(true);
+//                new PreferencesUI().setVisible(true);
             }
         });
     }

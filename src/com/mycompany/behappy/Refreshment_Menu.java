@@ -15,15 +15,13 @@ public class Refreshment_Menu extends javax.swing.JFrame {
     /**
      * Creates new form Refreshment_Menu
      */
-    Story1GUI storyGui;
-    QuoteGUI quoteGui;
-    SongGUI songGui;
-    public Refreshment_Menu() {
+
+    DisplayManager mgr;
+    public Refreshment_Menu(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
-        storyGui=new Story1GUI();
-        quoteGui=new QuoteGUI();
-        songGui=new SongGUI();
+    
     }
 
     /**
@@ -52,6 +50,7 @@ public class Refreshment_Menu extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 6, new java.awt.Color(255, 255, 255)));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,33 +195,28 @@ public class Refreshment_Menu extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        quoteGui.setVisible(true);
-        this.dispose();
+        mgr.showQG();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        storyGui.setVisible(true);
-        this.dispose();
+        mgr.showS1();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        songGui.setVisible(true);
-        this.dispose();
+       mgr.showSG();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        mgr.showMMU();
         
-        new MainMenuUI().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        new MainMenuUI().setVisible(true);
-        this.dispose();
+       mgr.showMMU();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
@@ -255,7 +249,7 @@ public class Refreshment_Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Refreshment_Menu().setVisible(true);
+                
             }
         });
     }

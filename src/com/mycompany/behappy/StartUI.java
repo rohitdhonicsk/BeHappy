@@ -22,8 +22,11 @@ public class StartUI extends javax.swing.JFrame {
     /**
      * Creates new form FirstPageUI
      */
-    public StartUI() {
+   private DisplayManager mgr;
+    public StartUI(DisplayManager mgr) {
+       this.mgr=mgr;
         initComponents();
+       
         this.setLocationRelativeTo(null);
         StartManager sm=new StartManager();
         animate();
@@ -171,15 +174,13 @@ public class StartUI extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new login().setVisible(true);
+        mgr.showL();
         
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new MainMenuUI().setVisible(true);
+        mgr.showMMU();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
@@ -215,7 +216,7 @@ public class StartUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartUI().setVisible(true);
+
                 
             }
         });

@@ -24,7 +24,9 @@ public class QuoteGUI extends javax.swing.JFrame {
     /**
      * Creates new form QuoteGUI
      */
-    public QuoteGUI() {
+    private DisplayManager mgr;
+    public QuoteGUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
         RM = new RManager();
@@ -61,6 +63,7 @@ public class QuoteGUI extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 6, 6, new java.awt.Color(255, 255, 255)));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -238,15 +241,12 @@ public class QuoteGUI extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        Refreshment_Menu menu=new Refreshment_Menu();
-        menu.setVisible(true);
-        this.dispose();
+       mgr.showRM();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new MainMenuUI().setVisible(true);
+       mgr.showMMU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     /**
@@ -327,7 +327,7 @@ public class QuoteGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new QuoteGUI().setVisible(true);
+//                new QuoteGUI().setVisible(true);
             }
         });
     }

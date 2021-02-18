@@ -21,7 +21,9 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
-    public login() {
+    private DisplayManager mgr;
+    public login(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
 //        jLabel1.setIcon(new ImageIcon("src/utils/logo_full.png"));
@@ -246,8 +248,7 @@ public class login extends javax.swing.JFrame {
             if (lm.verifyUsername(a) && lm.verifyPassword(a)) {
                 jTextField1.setText("Enter Username");
                 jPasswordField1.setText("Enter Password");
-                dispose();
-                new ManageTherapistMainUI().setVisible(true);  
+                mgr.showMTMU();
             }
             else if (!lm.verifyUsername(a)) {
                 jTextField1.setForeground(Color.red);
@@ -288,14 +289,12 @@ public class login extends javax.swing.JFrame {
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new StartUI().setVisible(true);
+        mgr.showSU();
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new StartUI().setVisible(true);
+        mgr.showSU();
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jPasswordField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseClicked
@@ -337,7 +336,7 @@ public class login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+              
             }
         });
     }

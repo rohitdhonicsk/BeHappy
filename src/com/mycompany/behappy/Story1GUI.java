@@ -20,11 +20,12 @@ public class Story1GUI extends javax.swing.JFrame {
     private ArrayList<MotivationalStory> MS;
     private JTextArea[] jt;
     private RManager RM;
-
+    DisplayManager mgr;
     /**
      * Creates new form Story1GUI
      */
-    public Story1GUI() {
+    public Story1GUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
         RM = new RManager();
@@ -132,6 +133,7 @@ public class Story1GUI extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(0, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
@@ -313,24 +315,22 @@ public class Story1GUI extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        
-        new MainMenuUI().setVisible(true);
-        this.dispose();
+        mgr.showMMU();
+ 
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        Refreshment_Menu menu=new Refreshment_Menu();
-        menu.setVisible(true);
-        this.dispose();
+        mgr.showRM();
+     
     }//GEN-LAST:event_jLabel10MouseClicked
     public void mouseClick(java.awt.event.MouseEvent e) {
         MotivationalStory ms;
         for (int i = 0; i < jt.length; i++) {
             if (e.getSource() == jt[i]) {
                 ms = RM.getSelectedStory(jt[i].getText());
-                Story2GUI gui2 = new Story2GUI(ms);
-                gui2.setVisible(true);
+                mgr.showS2(ms);
+             
                 this.dispose();
             }
         }
@@ -366,7 +366,7 @@ public class Story1GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Story1GUI().setVisible(true);
+              
             }
         });
     }

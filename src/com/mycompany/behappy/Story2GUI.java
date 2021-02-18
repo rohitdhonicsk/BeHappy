@@ -16,15 +16,21 @@ import javax.swing.JTextArea;
  * @author Saura
  */
 public class Story2GUI extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Story2GUI
      */
     private MotivationalStory ms;
-
-    public Story2GUI(MotivationalStory ms) {
+    private DisplayManager mgr;
+    public Story2GUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
+        
         this.setLocationRelativeTo(null);
+        
+        
+    }
+    public void setStory(MotivationalStory ms){
         this.ms=ms;
         this.display();
     }
@@ -56,6 +62,7 @@ public class Story2GUI extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 6, new java.awt.Color(255, 255, 255)));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,16 +185,15 @@ public class Story2GUI extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        mgr.showMMU();
+       
         
-        new MainMenuUI().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        Story1GUI gui1=new Story1GUI();
-        gui1.setVisible(true);
-        this.dispose();
+        mgr.showS1();
+   
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**

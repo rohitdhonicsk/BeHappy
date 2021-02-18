@@ -16,7 +16,7 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new StartUI().setVisible(true);
+//        new StartUI().setVisible(true);
     }
     
 }

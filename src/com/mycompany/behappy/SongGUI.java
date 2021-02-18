@@ -22,11 +22,12 @@ public class SongGUI extends javax.swing.JFrame {
     MotivationalSong msg;
     private JTextArea[] jt;
     private RManager RM;
-
+    DisplayManager mgr;
     /**
      * Creates new form SongGUI
      */
-    public SongGUI() {
+    public SongGUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
         RM = new RManager();
@@ -68,6 +69,7 @@ public class SongGUI extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 6, new java.awt.Color(255, 255, 255)));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -327,17 +329,17 @@ public class SongGUI extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        this.jLabel2.setText("Click on story's title to play");
         RM.stopSong();
-        new MainMenuUI().setVisible(true);
-        this.dispose();
+        mgr.showMMU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
+        this.jLabel2.setText("Click on story's title to play");
         RM.stopSong();
-        Refreshment_Menu menu=new Refreshment_Menu();
-        menu.setVisible(true);
-        this.dispose();
+        mgr.showRM();
+    
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
@@ -449,7 +451,7 @@ public class SongGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SongGUI().setVisible(true);
+//                new SongGUI().setVisible(true);
             }
         });
     }

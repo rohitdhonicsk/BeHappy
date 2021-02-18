@@ -20,16 +20,20 @@ import javax.swing.table.DefaultTableModel;
 public class ManageTherapistDSUUI extends javax.swing.JFrame {
 
     ManagerMT Mng;
-
+    private DisplayManager mgr;
     /**
      * Creates new form SearchTherapistUI
      */
-    public ManageTherapistDSUUI(String Name) {
+    public ManageTherapistDSUUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
-       this.jLabel3.setText(Name);
-       this.Button.setText(Name);
+       
         Mng = new ManagerMT();
+    }
+    public void setUIType(String Name){
+        this.jLabel3.setText(Name);
+       this.Button.setText(Name);
     }
 
     /**
@@ -375,20 +379,19 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
 
     private void CancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseClicked
         // TODO add your handling code here:
-        this.dispose();
-        new ManageTherapistMainUI().setVisible(true);
+       mgr.showMTMU();
+       
     }//GEN-LAST:event_CancelMouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new StartUI().setVisible(true);
+        mgr.showSU();
+       
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new ManageTherapistMainUI().setVisible(true);
+       mgr.showMTMU();
     }//GEN-LAST:event_jLabel12MouseClicked
 
     /**
@@ -398,8 +401,8 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ManageTherapistDSUUI p = new ManageTherapistDSUUI("Delete");
-                p.setVisible(true);
+//                ManageTherapistDSUUI p = new ManageTherapistDSUUI("De");
+//                p.setVisible(true);
 
             }
         });

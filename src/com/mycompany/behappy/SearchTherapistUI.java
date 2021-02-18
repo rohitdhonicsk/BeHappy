@@ -27,11 +27,12 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     Manager Mng;
     String website = "";
     int Budget;
-
+    private DisplayManager mgr;
     /**
      * Creates new form SearchTherapistUI
      */
-    public SearchTherapistUI() {
+    public SearchTherapistUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         Mng = new Manager();
         Data=new ArrayList<Therapist>();
@@ -585,14 +586,12 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new MainMenuUI().setVisible(true);
+       mgr.showMMU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new MainMenuUI().setVisible(true);
+      mgr.showMMU();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void ComboItemStateChanged(java.awt.event.ItemEvent evt) {
@@ -659,8 +658,8 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                SearchTherapistUI p = new SearchTherapistUI();
-                p.setVisible(true);
+//                SearchTherapistUI p = new SearchTherapistUI();
+//                p.setVisible(true);
 
             }
         });

@@ -15,7 +15,9 @@ public class MainMenuUI extends javax.swing.JFrame {
     /**
      * Creates new form MainMenu
      */
-    public MainMenuUI() {
+    private DisplayManager mgr;
+    public MainMenuUI(DisplayManager mgr) {
+        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -175,33 +177,28 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     private void stMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stMouseClicked
         // TODO add your handling code here:
-        dispose();
-        new SearchTherapistUI().setVisible(true);
+        mgr.showST();
     }//GEN-LAST:event_stMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new StartUI().setVisible(true);
+        mgr.showSU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        dispose();
-        new StartUI().setVisible(true);
+       mgr.showSU();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void rcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rcMouseClicked
         // TODO add your handling code here:
-        dispose();
-        new Refreshment_Menu().setVisible(true);
+        mgr.showRM();
         
     }//GEN-LAST:event_rcMouseClicked
 
     private void ttMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ttMouseClicked
         // TODO add your handling code here:
-        dispose();
-        new PreferencesUI().setVisible(true);
+        mgr.showPU();
     }//GEN-LAST:event_ttMouseClicked
 
     /**
@@ -235,7 +232,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuUI().setVisible(true);
+//                new MainMenuUI().setVisible(true);
             }
         });
     }

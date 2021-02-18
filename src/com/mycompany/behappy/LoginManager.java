@@ -71,6 +71,6 @@ public static void main(String[] args) {
     assert l.verifyDetails(b).equals("no user found");
     Admin c=new Admin("akash","111");
     assert l.verifyDetails(c).equals("Please enter correct password");
-    new login().setVisible(true);
+//    new login().setVisible(true);
 }
 }

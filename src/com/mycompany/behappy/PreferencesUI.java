@@ -366,7 +366,7 @@ public class PreferencesUI extends javax.swing.JFrame {
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
         dispose();
-        new PreferencesUI().setVisible(true);
+        new MainMenuUI().setVisible(true);
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**

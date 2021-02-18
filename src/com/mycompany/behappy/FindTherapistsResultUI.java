@@ -21,6 +21,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
     private String city;
     private int budget;
     int count=0;
+    
     public FindTherapistsResultUI() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -29,6 +30,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
     }
     public FindTherapistsResultUI(String city,int budget) {
         initComponents();
+        
 //        jLabel7.setIcon(new ImageIcon("src/utils/logo.png"));
         this.city=city;
         this.budget=budget;

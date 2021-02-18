@@ -22,7 +22,7 @@ public class StartManager {
         ArrayList<MotivationalQuote> arrlist=new ArrayList<>();
        String line = "";
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src/utils/MotivationalQuote.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("f:/behappy/behappy_ant/src/utils/MotivationalQuote.csv"));
             line = br.readLine();
             int count = 0;
             while ((line = br.readLine()) != null) //returns a Boolean value  

@@ -43,6 +43,23 @@ public String verifyDetails(Admin a){
     return "No user found";
  }
 }
+public boolean verifyPassword(Admin a){
+    HashMap d=this.importDatabase();
+    if(d.containsKey(a.getUsername())){
+     if(d.get(a.getUsername()).equals(a.getPwd())){
+        System.out.println("correct password");
+         return true;
+     }
+    }
+    return false;
+}
+public boolean verifyUsername(Admin a){
+    HashMap d=this.importDatabase();
+    if(d.containsKey(a.getUsername())){
+     return true;
+    }
+    return false;
+}
 
 
 public static void main(String[] args) {

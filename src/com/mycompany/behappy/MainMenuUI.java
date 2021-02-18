@@ -111,6 +111,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         tt.setText("Take test");
         tt.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         tt.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        tt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ttMouseClicked(evt);
+            }
+        });
 
         st.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         st.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/doctor_male_100px.png"))); // NOI18N
@@ -129,6 +134,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         rc.setText("Refreshment Centre");
         rc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         rc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        rc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rcMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,6 +190,19 @@ public class MainMenuUI extends javax.swing.JFrame {
         dispose();
         new StartUI().setVisible(true);
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void rcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rcMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new Refreshment_Menu().setVisible(true);
+        
+    }//GEN-LAST:event_rcMouseClicked
+
+    private void ttMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ttMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new PreferencesUI().setVisible(true);
+    }//GEN-LAST:event_ttMouseClicked
 
     /**
      * @param args the command line arguments

@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 public class SearchTherapistUI extends javax.swing.JFrame {
 
     ArrayList<Therapist> Data;
-    Manager Mng;
+//    Manager Mng;
     String website = "";
     int Budget;
     private DisplayManager mgr;
@@ -34,7 +34,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     public SearchTherapistUI(DisplayManager mgr) {
         this.mgr=mgr;
         initComponents();
-        Mng = new Manager();
+//        Mng = new Manager();
         Data=new ArrayList<Therapist>();
         this.setLocationRelativeTo(null);
         init();
@@ -53,7 +53,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
             this.feeValLabel.setText("Budget Value :: " + Integer.toString(Budget));
         }
 //        System.out.println(Data.size());
-        Data = Mng.getData();
+        Data = mgr.Mgr.getData();
 //        System.out.println(Data.size());
         this.showTable();
         this.ShowAvailDay();
@@ -563,14 +563,14 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
     private void SortNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SortNameMouseClicked
         // TODO add your handling code here:
-        Mng.sortData("Name");
+        mgr.Mgr.sortData("Name");
         init();
     }//GEN-LAST:event_SortNameMouseClicked
 
     private void VisitURLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VisitURLMouseClicked
 
         if (!website.equals("")) {
-            Mng.openWebsite(website);
+            mgr.Mgr.openWebsite(website);
         }
     }//GEN-LAST:event_VisitURLMouseClicked
 
@@ -596,10 +596,10 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
     private void ComboItemStateChanged(java.awt.event.ItemEvent evt) {
         if (!Combo.getSelectedItem().toString().equalsIgnoreCase("None")) {
-            Mng.filteredData(Combo.getSelectedItem().toString(), Budget);
+            mgr.Mgr.filteredData(Combo.getSelectedItem().toString(), Budget);
 
         } else {
-            Mng.allData();
+            mgr.Mgr.allData();
 
         }
 
@@ -611,10 +611,10 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
     private void SliderStateChanged(javax.swing.event.ChangeEvent evt) {
 
-        Mng.filteredData(Combo.getSelectedItem().toString(), Slider.getValue());
+        mgr.Mgr.filteredData(Combo.getSelectedItem().toString(), Slider.getValue());
         try{
         String SortSelected=this.buttonGroup1.getSelection().toString();
-        Mng.sortData(SortSelected);
+        mgr.Mgr.sortData(SortSelected);
         }
         catch(Exception ex){}
         init();
@@ -639,14 +639,14 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
     private void SortFeesMouseClicked(java.awt.event.MouseEvent evt) {
 
-        Mng.sortData("Fees");
+        mgr.Mgr.sortData("Fees");
 
         init();
     }
 
     private void SortExpMouseClicked(java.awt.event.MouseEvent evt) {
 
-        Mng.sortData("Experience");
+        mgr.Mgr.sortData("Experience");
 
         init();
     }

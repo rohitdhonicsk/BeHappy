@@ -19,7 +19,7 @@ import javax.swing.JTextArea;
  */
 public class QuoteGUI extends javax.swing.JFrame {
     private ArrayList<MotivationalQuote> MQ;
-    private RManager RM;
+//    private RManager RM;
 
     /**
      * Creates new form QuoteGUI
@@ -29,9 +29,9 @@ public class QuoteGUI extends javax.swing.JFrame {
         this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
-        RM = new RManager();
+//        mgr.RMgr = new RManager();
         MQ = new ArrayList<>();
-        MQ = RM.getListOfQuotes();
+        MQ = mgr.RMgr.getListOfQuotes();
         this.displayListOFQuotes();
     }
 
@@ -209,7 +209,7 @@ public class QuoteGUI extends javax.swing.JFrame {
             
 
             this.jPanel3.removeAll();
-            MQ = RM.getSearchedQuote(title);
+            MQ = mgr.RMgr.getSearchedQuote(title);
             if (MQ.isEmpty()) {
                 jLabel1.setText("OOPSIE,Nothing matched with: "+title);
             } else {
@@ -232,7 +232,7 @@ public class QuoteGUI extends javax.swing.JFrame {
             jLabel1.setText("Mental Health Quotes");
             this.jPanel3.removeAll();
             String title = this.jTextField1.getText();
-            MQ = RM.getListOfQuotes();
+            MQ = mgr.RMgr.getListOfQuotes();
             this.jPanel3.repaint();
             this.jPanel3.revalidate();
             this.displayListOFQuotes();

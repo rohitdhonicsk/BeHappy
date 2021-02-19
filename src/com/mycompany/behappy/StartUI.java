@@ -28,7 +28,8 @@ public class StartUI extends javax.swing.JFrame {
         initComponents();
        
         this.setLocationRelativeTo(null);
-        StartManager sm=new StartManager();
+        
+        
         animate();
 //        JLabel dailyQuote=new JLabel();
 //        dailyQuote.setHorizontalTextPosition((int) CENTER_ALIGNMENT);
@@ -49,7 +50,7 @@ public class StartUI extends javax.swing.JFrame {
 //        dailyQuote.setBackground(Color.red);
         
         jPanel2.add(jScrollPane1);
-        jTextArea1.setText(sm.generateRandomString());
+        jTextArea1.setText(mgr.SMgr.generateRandomString());
         jPanel2.add(jLabel1);
         jPanel2.add(jLabel3);
         jLabel1.setBounds(600, 300, 100, 100);

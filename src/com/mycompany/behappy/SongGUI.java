@@ -21,7 +21,7 @@ public class SongGUI extends javax.swing.JFrame {
     private ArrayList<MotivationalSong> MSG;
     MotivationalSong msg;
     private JTextArea[] jt;
-    private RManager RM;
+//    private RManager RM;
     DisplayManager mgr;
     /**
      * Creates new form SongGUI
@@ -30,9 +30,9 @@ public class SongGUI extends javax.swing.JFrame {
         this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
-        RM = new RManager();
+//        mgr.RMgr = new RManager();
         MSG = new ArrayList<>();
-        MSG = RM.getListOfSongs();
+        MSG = mgr.RMgr.getListOfSongs();
         this.displayListOFSongs();
     }
 
@@ -276,7 +276,7 @@ public class SongGUI extends javax.swing.JFrame {
         if (!title.equals("")) {
 
             this.jPanel3.removeAll();
-            MSG = RM.getSearchedSong(title);
+            MSG = mgr.RMgr.getSearchedSong(title);
             if (MSG.isEmpty()) {
                 jLabel5.setText("OOPSIE,Nothing matched with: " + title);
             } else {
@@ -297,7 +297,7 @@ public class SongGUI extends javax.swing.JFrame {
             jLabel5.setText("Soothing Musics");
             this.jPanel3.removeAll();
             String title = this.jTextField1.getText();
-            MSG = RM.getListOfSongs();
+            MSG = mgr.RMgr.getListOfSongs();
             this.jPanel3.repaint();
             this.jPanel3.revalidate();
             this.displayListOFSongs();
@@ -306,21 +306,21 @@ public class SongGUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        RM.resumeSong();
+        mgr.RMgr.resumeSong();
         this.jButton3.setEnabled(true);
         this.jButton2.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        RM.pauseSong();
+        mgr.RMgr.pauseSong();
         this.jButton2.setEnabled(true);
         this.jButton3.setEnabled(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        RM.stopSong();
+        mgr.RMgr.stopSong();
         this.jButton2.setEnabled(false);
         this.jButton3.setEnabled(false);
         this.jButton4.setEnabled(false);
@@ -330,14 +330,14 @@ public class SongGUI extends javax.swing.JFrame {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
         this.jLabel2.setText("Click on story's title to play");
-        RM.stopSong();
+        mgr.RMgr.stopSong();
         mgr.showMMU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
         this.jLabel2.setText("Click on story's title to play");
-        RM.stopSong();
+        mgr.RMgr.stopSong();
         mgr.showRM();
     
     }//GEN-LAST:event_jLabel10MouseClicked
@@ -418,8 +418,8 @@ public class SongGUI extends javax.swing.JFrame {
         for (int i = 0; i < jt.length; i++) {
             if (e.getSource() == jt[i]) {
                 this.jLabel2.setText("Now playing:- "+jt[i].getText()+".mp3");
-                msg = RM.getSelectedSong(jt[i].getText());
-                RM.startPlayingSong(msg.getSongName());
+                msg = mgr.RMgr.getSelectedSong(jt[i].getText());
+                mgr.RMgr.startPlayingSong(msg.getSongName());
             }
         }
     }

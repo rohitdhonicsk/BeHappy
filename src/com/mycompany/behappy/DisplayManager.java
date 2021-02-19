@@ -27,7 +27,12 @@ public class DisplayManager {
     Story2GUI S2;
     login L;
     Refreshment_Menu RM;
-
+    StartManager SMgr;
+    LoginManager LMgr;
+    FindTherapistManager FTMgr;
+    Manager Mgr;
+    ManagerMT MMTMgr;
+    RManager RMgr;
     public DisplayManager() {
 
     }
@@ -130,6 +135,12 @@ public class DisplayManager {
 
     public static void main(String[] args) {
         DisplayManager DM = new DisplayManager();
+        DM.SMgr=new StartManager();
+        DM.LMgr=new LoginManager();
+        DM.FTMgr=new FindTherapistManager();
+        DM.Mgr=new Manager();
+        DM.MMTMgr=new ManagerMT();
+        DM.RMgr=new RManager();
         DM.SU = new StartUI(DM);
         DM.FTR = new FindTherapistsResultUI(DM);
         DM.MMU = new MainMenuUI(DM);

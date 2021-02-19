@@ -26,7 +26,7 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
 
     Therapist UserData;
     String[] AvailDay;
-    ManagerMT Mng;
+//    ManagerMT Mng;
     
    private DisplayManager mgr;
     /**
@@ -39,7 +39,7 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
         UserData = new Therapist();
         this.AvailDay = new String[7];
         String a = "Add <br >Therapist";
-        Mng = new ManagerMT();
+//        Mng = new ManagerMT();
 
     }
     private void clearData(){
@@ -538,7 +538,7 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AddActionPerformed
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
-        String Status=Mng.VerifyData(Name.getText(),City.getText() , Contact.getText(),Fees.getText(), Experience.getText(), WebLink.getText(), Address.getText());
+        String Status=mgr.MMTMgr.VerifyData(Name.getText(),City.getText() , Contact.getText(),Fees.getText(), Experience.getText(), WebLink.getText(), Address.getText());
         if(!Status.equalsIgnoreCase("Successfully Added Therapist")) {
             JOptionPane.showMessageDialog(this, Status,
                     "INVALID", JOptionPane.ERROR_MESSAGE);
@@ -549,7 +549,7 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
             this.DefaultData();
             this.getData();
             
-            this.Mng.appendData(UserData);
+            this.mgr.MMTMgr.appendData(UserData);
             this.clearData();
              JOptionPane.showMessageDialog(this, Status,
                 "Success", JOptionPane.INFORMATION_MESSAGE);

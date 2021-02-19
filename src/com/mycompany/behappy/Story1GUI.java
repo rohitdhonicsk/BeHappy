@@ -19,7 +19,7 @@ public class Story1GUI extends javax.swing.JFrame {
 
     private ArrayList<MotivationalStory> MS;
     private JTextArea[] jt;
-    private RManager RM;
+//    private RManager RM;
     DisplayManager mgr;
     /**
      * Creates new form Story1GUI
@@ -28,9 +28,9 @@ public class Story1GUI extends javax.swing.JFrame {
         this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
-        RM = new RManager();
+//        RM = new RManager();
         MS = new ArrayList<>();
-        MS = RM.getListOfStories();
+        MS = mgr.RMgr.getListOfStories();
         this.displayListOFStories();
     }
     public void displayListOFStories() {
@@ -284,7 +284,7 @@ public class Story1GUI extends javax.swing.JFrame {
         if (!title.equals("")) {
 
             this.jPanel3.removeAll();
-            MS = RM.getSearchedStory(title);
+            MS = mgr.RMgr.getSearchedStory(title);
             if (MS.isEmpty()) {
                 jLabel1.setText("OOPSIE,Nothing matched with: " + title);
             } else {
@@ -305,7 +305,7 @@ public class Story1GUI extends javax.swing.JFrame {
             jLabel1.setText("Stories of Recovery");
             this.jPanel3.removeAll();
             String title = this.jTextField1.getText();
-            MS = RM.getListOfStories();
+            MS = mgr.RMgr.getListOfStories();
             this.jPanel3.repaint();
             this.jPanel3.revalidate();
             this.displayListOFStories();
@@ -328,7 +328,7 @@ public class Story1GUI extends javax.swing.JFrame {
         MotivationalStory ms;
         for (int i = 0; i < jt.length; i++) {
             if (e.getSource() == jt[i]) {
-                ms = RM.getSelectedStory(jt[i].getText());
+                ms = mgr.RMgr.getSelectedStory(jt[i].getText());
                 mgr.showS2(ms);
              
                 this.dispose();

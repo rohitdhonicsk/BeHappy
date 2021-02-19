@@ -25,7 +25,7 @@ public class FindTherapistManager {
         
         try{
             String line="";
-            BufferedReader br=new BufferedReader(new FileReader("src/utils/TherapistDataset.csv"));
+            BufferedReader br=new BufferedReader(new FileReader("TherapistDataset.csv"));
             line=br.readLine();  
             while ((line = br.readLine()) != null )   //returns a Boolean value  
             {  
@@ -58,15 +58,15 @@ public class FindTherapistManager {
         }
         return arr;
     }
-    public static void main(String[] args) {
-        // TODO code application logic here
-//    FindTherapistManager f=new FindTherapistManager();
-//        ArrayList<Therapist> r=f.recommend("mumbai",6000);
-//        for(int i = 0; i < r.size(); i++) {
-//            System.out.println(r.get(i).getAddress());
-//        }
-   
-//    new PreferencesUI().setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        // TODO code application logic here
+////    FindTherapistManager f=new FindTherapistManager();
+////        ArrayList<Therapist> r=f.recommend("mumbai",6000);
+////        for(int i = 0; i < r.size(); i++) {
+////            System.out.println(r.get(i).getAddress());
+////        }
+//   
+////    new PreferencesUI().setVisible(true);
+//    }
     
 }

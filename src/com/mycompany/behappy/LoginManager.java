@@ -9,7 +9,7 @@ public  HashMap importDatabase(){
 HashMap<String, String> data=new HashMap<>();
 try{
     String line="";
-    BufferedReader br = new BufferedReader(new FileReader("src/utils/dbs.csv"));
+    BufferedReader br = new BufferedReader(new FileReader("dbs.csv"));
     line=br.readLine();  
     while ((line = br.readLine()) != null)   //returns a Boolean value  
     {  
@@ -23,26 +23,26 @@ e.printStackTrace();
 return data;
 }
 
-public String verifyDetails(Admin a){
-    HashMap d=this.importDatabase();
- if(d.containsKey(a.getUsername())){
-     if(d.get(a.getUsername()).equals(a.getPwd())){
-        System.out.println("correct password");
-//         JOptionPane.showMessageDialog(this,"Login successful");
-         return "Login Successful";
-     }
-     else{
-         System.out.println("wrong password");
-//         JOptionPane.showMessageDialog(this,"Please enter correct password");
-         return "Please enter correct password";
-     }
-
- }
- else{
-    System.out.println("no user found");
-    return "No user found";
- }
-}
+//public String verifyDetails(Admin a){
+//    HashMap d=this.importDatabase();
+// if(d.containsKey(a.getUsername())){
+//     if(d.get(a.getUsername()).equals(a.getPwd())){
+//        System.out.println("correct password");
+////         JOptionPane.showMessageDialog(this,"Login successful");
+//         return "Login Successful";
+//     }
+//     else{
+//         System.out.println("wrong password");
+////         JOptionPane.showMessageDialog(this,"Please enter correct password");
+//         return "Please enter correct password";
+//     }
+//
+// }
+// else{
+//    System.out.println("no user found");
+//    return "No user found";
+// }
+//}
 public boolean verifyPassword(Admin a){
     HashMap d=this.importDatabase();
     if(d.containsKey(a.getUsername())){
@@ -65,12 +65,7 @@ public boolean verifyUsername(Admin a){
 public static void main(String[] args) {
      
     LoginManager l=new LoginManager();
-    Admin a=new Admin("akash","1111");
-    assert l.verifyDetails(a).equals("correct password");
-    Admin b=new Admin("aksh","1111");
-    assert l.verifyDetails(b).equals("no user found");
-    Admin c=new Admin("akash","111");
-    assert l.verifyDetails(c).equals("Please enter correct password");
+//    l.importDatabase()
 //    new login().setVisible(true);
 }
 }

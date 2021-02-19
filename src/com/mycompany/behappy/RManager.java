@@ -43,7 +43,7 @@ public class RManager {
         String line = "";
         String splitBy = ",";
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src/utils/MotivationalStory.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("MotivationalStory.csv"));
             line = br.readLine();
             int count = 0;
             while ((line = br.readLine()) != null) //returns a Boolean value  
@@ -71,7 +71,7 @@ public class RManager {
         }
         line = null;
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src/utils/MotivationalQuote.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("MotivationalQuote.csv"));
             line = br.readLine();
             int count = 0;
             while ((line = br.readLine()) != null) //returns a Boolean value  
@@ -91,7 +91,7 @@ public class RManager {
         }
         line = "";
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src/utils/MotivationalSong.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("MotivationalSong.csv"));
             line = br.readLine();
             int count = 0;
             while ((line = br.readLine()) != null) //returns a Boolean value  
@@ -168,7 +168,7 @@ public class RManager {
 
     public void startPlayingSong(String title) {
         fileChooser = new JFileChooser();
-        fileChooser.setSelectedFile(new File("src/utils/" + title + ".mp3"));
+        fileChooser.setSelectedFile(new File( title + ".mp3"));
         myFile = fileChooser.getSelectedFile();
         filename = fileChooser.getSelectedFile().getName();
         filePath = fileChooser.getSelectedFile().getPath();

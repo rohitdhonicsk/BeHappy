@@ -135,7 +135,7 @@ public class Manager {
         Therapist Person;
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src/utils/TherapistDataset.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("TherapistDataset.csv"));
             line = br.readLine();
 
             while ((line = br.readLine()) != null) //returns a Boolean value  

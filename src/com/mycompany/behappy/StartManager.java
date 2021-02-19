@@ -22,7 +22,7 @@ public class StartManager {
         ArrayList<MotivationalQuote> arrlist=new ArrayList<>();
        String line = "";
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src/utils/MotivationalQuote.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("MotivationalQuote.csv"));
             line = br.readLine();
             int count = 0;
             while ((line = br.readLine()) != null) //returns a Boolean value  
@@ -51,13 +51,13 @@ public class StartManager {
         int randomNumber=r.nextInt(arrlist.size());
         return arrlist.get(randomNumber).getQuote();
     }
-    public static void main(String[] args) {
-        
-    System.out.println(StartManager.importDatabase());
-    StartManager s=new StartManager();
-        for(int i=0;i<5;i++)
-        System.out.println(s.generateRandomString());
-//        new StartUI().setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        
+//    System.out.println(StartManager.importDatabase());
+//    StartManager s=new StartManager();
+//        for(int i=0;i<5;i++)
+//        System.out.println(s.generateRandomString());
+////        new StartUI().setVisible(true);
+//    }
 
 }

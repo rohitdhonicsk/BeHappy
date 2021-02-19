@@ -166,7 +166,7 @@ public class ManagerMT {
         }
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("src/utils/TherapistDataset.csv"));
+            BufferedReader reader = new BufferedReader(new FileReader("TherapistDataset.csv"));
 
             String currentLine = reader.readLine();
 
@@ -210,9 +210,9 @@ public class ManagerMT {
         try {
             boolean Found = searchData("-1", Person.getName(), Person.getContactNumber(), Person.getCity());
             if (!Found) {
-                File InputFile = new File("src/utils/TherapistDataset.csv");
-                BufferedReader reader = new BufferedReader(new FileReader("src/utils/TherapistDataset.csv"));
-                File tempFile = new File("src/utils/Temp.csv");
+                File InputFile = new File("TherapistDataset.csv");
+                BufferedReader reader = new BufferedReader(new FileReader("TherapistDataset.csv"));
+                File tempFile = new File("Temp.csv");
                 BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
                 String currentLine = reader.readLine();
@@ -276,9 +276,9 @@ public class ManagerMT {
         }
         
         try {
-            File InputFile = new File("src/utils/TherapistDataset.csv");
-            BufferedReader reader = new BufferedReader(new FileReader("src/utils/TherapistDataset.csv"));
-            File tempFile = new File("src/utils/Temp.csv");
+            File InputFile = new File("TherapistDataset.csv");
+            BufferedReader reader = new BufferedReader(new FileReader("TherapistDataset.csv"));
+            File tempFile = new File("Temp.csv");
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
             String currentLine = reader.readLine();

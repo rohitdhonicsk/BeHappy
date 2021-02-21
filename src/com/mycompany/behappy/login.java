@@ -244,19 +244,19 @@ public class login extends javax.swing.JFrame {
         }
         else{
         Admin a=new Admin(name,pwd);
-            if (mgr.LMgr.verifyUsername(a) && mgr.LMgr.verifyPassword(a)) {
+            if (mgr.BHM.LMgr.verifyUsername(a) && mgr.BHM.LMgr.verifyPassword(a)) {
                 jTextField1.setText("Enter Username");
                 jPasswordField1.setText("Enter Password");
                 mgr.showMTMU();
             }
-            else if (!mgr.LMgr.verifyUsername(a)) {
+            else if (!mgr.BHM.LMgr.verifyUsername(a)) {
                 jTextField1.setForeground(Color.red);
                 jPasswordField1.setForeground(Color.red);
                 jTextField1.setText("Please enter correct username");
                 jPasswordField1.setText("Please enter correct password");
               JOptionPane.showMessageDialog(this, "No User Found","error",JOptionPane.ERROR_MESSAGE);  
             }
-            else if (mgr.LMgr.verifyUsername(a)&& !mgr.LMgr.verifyPassword(a)){
+            else if (mgr.BHM.LMgr.verifyUsername(a)&& !mgr.BHM.LMgr.verifyPassword(a)){
                 jPasswordField1.setForeground(Color.red);
                 jPasswordField1.setText("Please enter correct password");
                 JOptionPane.showMessageDialog(this, "Wrong Password","error",JOptionPane.ERROR_MESSAGE);

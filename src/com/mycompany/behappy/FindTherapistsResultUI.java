@@ -338,7 +338,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         ArrayList<Therapist> therapists=new ArrayList<>();
 //        FindTherapistManager ftm=new FindTherapistManager();
-        therapists=mgr.FTMgr.recommend(city, budget);
+        therapists=mgr.BHM.FTMgr.recommend(city, budget);
         
 
         if(count<therapists.size()-1)
@@ -368,7 +368,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         ArrayList<Therapist> therapists=new ArrayList<>();
         FindTherapistManager ftm=new FindTherapistManager();
-        therapists=mgr.FTMgr.recommend(city, budget);
+        therapists=mgr.BHM.FTMgr.recommend(city, budget);
         if(count>0)
         {
             if(count==therapists.size())
@@ -398,7 +398,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
 //        Manager mng=new Manager();
-        mgr.Mgr.openWebsite(urlt.getText());
+        mgr.BHM.Mgr.openWebsite(urlt.getText());
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked

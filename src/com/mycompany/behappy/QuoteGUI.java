@@ -31,7 +31,7 @@ public class QuoteGUI extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 //        mgr.RMgr = new RManager();
         MQ = new ArrayList<>();
-        MQ = mgr.RMgr.getListOfQuotes();
+        MQ = mgr.BHM.RMgr.getListOfQuotes();
         this.displayListOFQuotes();
     }
 
@@ -209,7 +209,7 @@ public class QuoteGUI extends javax.swing.JFrame {
             
 
             this.jPanel3.removeAll();
-            MQ = mgr.RMgr.getSearchedQuote(title);
+            MQ = mgr.BHM.RMgr.getSearchedQuote(title);
             if (MQ.isEmpty()) {
                 jLabel1.setText("OOPSIE,Nothing matched with: "+title);
             } else {
@@ -232,7 +232,7 @@ public class QuoteGUI extends javax.swing.JFrame {
             jLabel1.setText("Mental Health Quotes");
             this.jPanel3.removeAll();
             String title = this.jTextField1.getText();
-            MQ = mgr.RMgr.getListOfQuotes();
+            MQ = mgr.BHM.RMgr.getListOfQuotes();
             this.jPanel3.repaint();
             this.jPanel3.revalidate();
             this.displayListOFQuotes();

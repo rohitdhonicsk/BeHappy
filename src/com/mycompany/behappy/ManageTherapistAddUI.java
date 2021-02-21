@@ -538,7 +538,7 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AddActionPerformed
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
-        String Status=mgr.MMTMgr.VerifyData(Name.getText(),City.getText() , Contact.getText(),Fees.getText(), Experience.getText(), WebLink.getText(), Address.getText());
+        String Status=mgr.BHM.MMTMgr.VerifyData(Name.getText(),City.getText() , Contact.getText(),Fees.getText(), Experience.getText(), WebLink.getText(), Address.getText());
         if(!Status.equalsIgnoreCase("Successfully Added Therapist")) {
             JOptionPane.showMessageDialog(this, Status,
                     "INVALID", JOptionPane.ERROR_MESSAGE);
@@ -549,7 +549,7 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
             this.DefaultData();
             this.getData();
             
-            this.mgr.MMTMgr.appendData(UserData);
+            this.mgr.BHM.MMTMgr.appendData(UserData);
             this.clearData();
              JOptionPane.showMessageDialog(this, Status,
                 "Success", JOptionPane.INFORMATION_MESSAGE);

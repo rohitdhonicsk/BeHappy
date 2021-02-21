@@ -345,7 +345,7 @@ public class PreferencesUI extends javax.swing.JFrame {
         if ((grb1.isSelected() || grb2.isSelected()) && (srb1.isSelected() || srb2.isSelected()) && !bt1.getText().equals("") && !(city == null)) {
             budget = Integer.parseInt(bt1.getText());
 //            FindTherapistManager ftm = new FindTherapistManager();
-            therapists = mgr.FTMgr.recommend(city, budget);
+            therapists = mgr.BHM.FTMgr.recommend(city, budget);
 
             if (therapists.size() == 0) {
                 JOptionPane.showMessageDialog(this, "sorry, we couldn't find any therapist at your location and budget", "error 404", JOptionPane.WARNING_MESSAGE);

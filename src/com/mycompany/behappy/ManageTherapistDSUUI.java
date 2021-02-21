@@ -347,10 +347,10 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
         String CityId = this.CityId.getText();
         String City = this.City.getText();
         String Contact = this.Contact.getText();
-        String Status = mgr.MMTMgr.verifyDeletingSearchData(Name, Contact, City, CityId);
+        String Status = mgr.BHM.MMTMgr.verifyDeletingSearchData(Name, Contact, City, CityId);
         if (Status.equals("success")) {
             this.ClearData();
-            boolean Found = mgr.MMTMgr.searchData(CityId, Name, Contact, City);
+            boolean Found = mgr.BHM.MMTMgr.searchData(CityId, Name, Contact, City);
             if (this.Button.getText().equals("Search")) {
                 if (Found) {
                     JOptionPane.showMessageDialog(this, "Found Therapist",
@@ -362,7 +362,7 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
 
             } else {
                 if (Found) {
-                    mgr.MMTMgr.deleteData(CityId, Name, Contact, City);
+                    mgr.BHM.MMTMgr.deleteData(CityId, Name, Contact, City);
                     JOptionPane.showMessageDialog(this, "Successfully Deleted Therapist",
                             "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {

@@ -1,6 +1,4 @@
-package taketest;
-
-import taketest.TakeTestEntity;
+package com.mycompany.behappy;
 import java.util.Scanner;
 public class TakeTestManager extends TakeTestEntity
 {

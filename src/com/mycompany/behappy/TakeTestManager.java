@@ -1,9 +1,8 @@
-package taketest;
+package com.mycompany.behappy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import taketest.TakeTestEntity;
 import java.util.Scanner;
 public class TakeTestManager 
 {
@@ -41,7 +40,7 @@ public class TakeTestManager
         try   
         {  
             //parsing a CSV file into BufferedReader class constructor  
-            BufferedReader br = new BufferedReader(new FileReader("C://Users/Aanisha/Desktop/TakeTest/utils/StressTest.csv"));  
+            BufferedReader br = new BufferedReader(new FileReader("StressTest.csv"));  
             while ((line = br.readLine()) != null)   //returns a Boolean value  
             {  
                 if(c==0)
@@ -66,7 +65,7 @@ public class TakeTestManager
         try   
         {  
             //parsing a CSV file into BufferedReader class constructor  
-            BufferedReader br = new BufferedReader(new FileReader("C://Users/Aanisha/Desktop/TakeTest/utils/AnxietyTest.csv"));  
+            BufferedReader br = new BufferedReader(new FileReader("AnxietyTest.csv"));  
             while ((line = br.readLine()) != null)   //returns a Boolean value  
             {  
                 if(c==0)
@@ -90,8 +89,7 @@ public class TakeTestManager
         try   
         {  
             //parsing a CSV file into BufferedReader class constructor  
-            BufferedReader br = new BufferedReader(new FileReader("C://Users/Aanisha/Desktop/TakeTest/utils/"
-                    + "DepressionTest.csv"));  
+            BufferedReader br = new BufferedReader(new FileReader("DepressionTest.csv"));  
             while ((line = br.readLine()) != null)   //returns a Boolean value  
             {  
                 if(c==0)

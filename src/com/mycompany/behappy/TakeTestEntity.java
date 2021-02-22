@@ -1,4 +1,4 @@
-package taketest;
+package com.mycompany.behappy;
 
 import java.io.BufferedReader;  
 import java.io.FileReader;  

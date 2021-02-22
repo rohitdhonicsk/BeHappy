@@ -363,6 +363,9 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
             } else {
                 if (Found) {
                     mgr.BHM.MMTMgr.deleteData(CityId, Name, Contact, City);
+                    this.mgr.BHM.Mgr.storeData();
+                    this.mgr.BHM.Mgr.allData();
+                    this.mgr.ST.init();
                     JOptionPane.showMessageDialog(this, "Successfully Deleted Therapist",
                             "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {

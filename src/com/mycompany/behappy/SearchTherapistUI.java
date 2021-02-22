@@ -587,11 +587,13 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
        mgr.showMMU();
+       Combo.setSelectedIndex(0);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
       mgr.showMMU();
+      Combo.setSelectedIndex(0);
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void ComboItemStateChanged(java.awt.event.ItemEvent evt) {

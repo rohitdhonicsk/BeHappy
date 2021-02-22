@@ -130,6 +130,7 @@ public class Manager {
     }
 
     public void storeData() {
+        Data.clear();
         String line = "";
         String splitBy = ",";
         Therapist Person;

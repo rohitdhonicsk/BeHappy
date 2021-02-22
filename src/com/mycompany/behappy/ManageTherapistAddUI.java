@@ -550,6 +550,10 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
             this.getData();
             
             this.mgr.BHM.MMTMgr.appendData(UserData);
+            this.mgr.BHM.Mgr.storeData();
+            this.mgr.BHM.Mgr.allData();
+            this.mgr.ST.init();
+            
             this.clearData();
              JOptionPane.showMessageDialog(this, Status,
                 "Success", JOptionPane.INFORMATION_MESSAGE);

@@ -2,8 +2,11 @@ package com.mycompany.behappy;
 
 
 import java.awt.Checkbox;
+import java.awt.Image;
 import java.util.*;
 import java.lang.*;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,9 +29,21 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
        this.mgr=mgr;
         initComponents();
         this.setLocationRelativeTo(null);
-
+        ImageIcon icon1 = new ImageIcon("src/utils/RA.png");
+        ImageIcon icon2 = new ImageIcon("src/utils/RD.png");
+        ImageIcon icon3 = new ImageIcon("src/utils/RS.png");
+        this.ADDLabel.setIcon(resizeIcon(icon1,this.ADDLabel.getWidth(),this.ADDLabel.getHeight()));
+        this.DELETELabel.setIcon(resizeIcon(icon2,this.DELETELabel.getWidth(),this.DELETELabel.getHeight()));
+        this.SEARCHLabel.setIcon(resizeIcon(icon3,this.SEARCHLabel.getWidth(),this.SEARCHLabel.getHeight()));
+    
+    }   
+    private static Icon resizeIcon(ImageIcon icon2, int resizedWidth, int resizedHeight) {
+        
+        Image img = icon2.getImage();
+        Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight, java.awt.Image.SCALE_SMOOTH);
+        
+        return new ImageIcon(resizedImage);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,7 +57,9 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
         DeleteTherapist = new javax.swing.JButton();
         SearchTherapist = new javax.swing.JButton();
         AddTherapist = new javax.swing.JButton();
-        UpdateTherapist = new javax.swing.JButton();
+        DELETELabel = new javax.swing.JLabel();
+        SEARCHLabel = new javax.swing.JLabel();
+        ADDLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -55,39 +72,37 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(147, 205, 186));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(133, 200, 173), 6));
 
+        DeleteTherapist.setBackground(new java.awt.Color(255, 255, 255));
         DeleteTherapist.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         DeleteTherapist.setForeground(new java.awt.Color(0, 88, 81));
         DeleteTherapist.setText("Delete");
+        DeleteTherapist.setFocusable(false);
         DeleteTherapist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteTherapistActionPerformed(evt);
             }
         });
 
+        SearchTherapist.setBackground(new java.awt.Color(255, 255, 255));
         SearchTherapist.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         SearchTherapist.setForeground(new java.awt.Color(0, 88, 81));
-        SearchTherapist.setText("Search");
+        SearchTherapist.setText("  Search");
+        SearchTherapist.setDoubleBuffered(true);
+        SearchTherapist.setFocusable(false);
         SearchTherapist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchTherapistActionPerformed(evt);
             }
         });
 
+        AddTherapist.setBackground(new java.awt.Color(255, 255, 255));
         AddTherapist.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         AddTherapist.setForeground(new java.awt.Color(0, 88, 81));
         AddTherapist.setText("ADD");
+        AddTherapist.setFocusable(false);
         AddTherapist.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddTherapistMouseClicked(evt);
-            }
-        });
-
-        UpdateTherapist.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        UpdateTherapist.setForeground(new java.awt.Color(0, 88, 81));
-        UpdateTherapist.setText("Update");
-        UpdateTherapist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateTherapistActionPerformed(evt);
             }
         });
 
@@ -96,30 +111,45 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(131, 131, 131)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(UpdateTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(AddTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SearchTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(90, 90, 90)
-                            .addComponent(DeleteTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(134, Short.MAX_VALUE))
+                    .addComponent(DELETELabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ADDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SEARCHLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(DeleteTherapist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                        .addComponent(AddTherapist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SearchTherapist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(AddTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(DeleteTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(AddTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(ADDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SearchTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addComponent(UpdateTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(DeleteTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(DELETELabel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(SearchTherapist, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(SEARCHLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(63, 63, 63))
         );
 
         jPanel1.setBackground(new java.awt.Color(40, 153, 160));
@@ -218,11 +248,6 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
         mgr.showMTDSU("Search");
     }//GEN-LAST:event_SearchTherapistActionPerformed
 
-    private void UpdateTherapistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTherapistActionPerformed
-        this.dispose();
-
-    }//GEN-LAST:event_UpdateTherapistActionPerformed
-
     private void AddTherapistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddTherapistMouseClicked
         mgr.showMTAU();
         // TODO add your handling code here:
@@ -276,10 +301,12 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ADDLabel;
     private javax.swing.JButton AddTherapist;
+    private javax.swing.JLabel DELETELabel;
     private javax.swing.JButton DeleteTherapist;
+    private javax.swing.JLabel SEARCHLabel;
     private javax.swing.JButton SearchTherapist;
-    private javax.swing.JButton UpdateTherapist;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

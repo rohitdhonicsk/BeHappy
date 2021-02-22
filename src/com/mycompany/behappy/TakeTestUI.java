@@ -20,25 +20,22 @@ public class TakeTestUI extends javax.swing.JFrame {
      */
     private TakeTestManager mng;
     private TakeTestEntity ent;
-    public int Stsc = 0;
-    public int Ansc = 0;
-    public int Desc = 0;
-    
-    public TakeTestUI() 
-    {
+    private int Stsc = 0;
+    private int Ansc = 0;
+    private int Desc = 0;
+    private DisplayManager mgr;
+
+    public TakeTestUI(DisplayManager mgr) {
+        this.mgr = mgr;
+
         initComponents();
-        
+        this.setLocationRelativeTo(null);
+
         mng = new TakeTestManager();
         ent = new TakeTestEntity();
         stressScreen();
         //this.jPanel6.setVisible(true);
-        
-        
-        
-         
-         
-        
-        
+
     }
 
     /**
@@ -64,6 +61,8 @@ public class TakeTestUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         take_test = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -98,8 +97,6 @@ public class TakeTestUI extends javax.swing.JFrame {
         jRadioButton22 = new javax.swing.JRadioButton();
         jRadioButton23 = new javax.swing.JRadioButton();
         jRadioButton24 = new javax.swing.JRadioButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -134,18 +131,15 @@ public class TakeTestUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,11 +148,11 @@ public class TakeTestUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addGap(115, 115, 115)
+                .addGap(103, 103, 103)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(147, 205, 186));
@@ -170,21 +164,41 @@ public class TakeTestUI extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Take Test");
 
+        jTextArea2.setEditable(false);
+        jTextArea2.setBackground(new java.awt.Color(147, 205, 186));
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setRows(2);
+        jTextArea2.setWrapStyleWord(true);
+        jTextArea2.setAutoscrolls(false);
+        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jTextArea2.setCaretColor(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setViewportView(jTextArea2);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(214, 214, 214)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel4.setBackground(new java.awt.Color(147, 205, 186));
@@ -204,6 +218,8 @@ public class TakeTestUI extends javax.swing.JFrame {
                 take_testActionPerformed(evt);
             }
         });
+
+        jScrollPane1.setBorder(null);
 
         jPanel6.setBackground(new java.awt.Color(147, 205, 186));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -495,52 +511,36 @@ public class TakeTestUI extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel6);
 
-        jTextArea2.setBackground(new java.awt.Color(147, 205, 186));
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jTextArea2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(2);
-        jTextArea2.setWrapStyleWord(true);
-        jTextArea2.setAutoscrolls(false);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jTextArea2.setCaretColor(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setViewportView(jTextArea2);
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(take_test, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(291, 291, 291))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 535, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(234, 234, 234)
+                .addComponent(take_test, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(take_test, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(144, 144, 144))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(take_test, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123))
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -548,7 +548,7 @@ public class TakeTestUI extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -558,30 +558,29 @@ public class TakeTestUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void stressScreen()
-    {
-            this.jLabel1.setText("Stress Test");
-            this.jPanel6.setVisible(true);
-            take_test.setText("Submit Stress Test");
-            
-            this.jTextArea2.setText("Answer the questions below");
-            this.jLabel3.setText("In last week "+mng.getStress(0));
-            this.jLabel4.setText("In last week "+mng.getStress(1));
-            this.jLabel5.setText("In last week "+mng.getStress(2));
-            this.jLabel6.setText("In last week "+mng.getStress(3));
-            this.jLabel7.setText("In last week "+mng.getStress(4));
-            this.jLabel8.setText("In last week "+mng.getStress(5));
+    public void stressScreen() {
+        this.jLabel1.setText("Stress Test");
+        this.jPanel6.setVisible(true);
+        take_test.setText("Submit Stress Test");
+
+        this.jTextArea2.setText("Answer the questions below");
+        this.jLabel3.setText("In last week " + mng.getStress(0));
+        this.jLabel4.setText("In last week " + mng.getStress(1));
+        this.jLabel5.setText("In last week " + mng.getStress(2));
+        this.jLabel6.setText("In last week " + mng.getStress(3));
+        this.jLabel7.setText("In last week " + mng.getStress(4));
+        this.jLabel8.setText("In last week " + mng.getStress(5));
     }
     private void take_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_take_testActionPerformed
         // TODO add your handling code here:
@@ -596,234 +595,233 @@ public class TakeTestUI extends javax.swing.JFrame {
             
             
         }*/
-        if(label.equalsIgnoreCase("Submit Stress Test"))
-        {
-            if((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton2.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton3.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton4.getModel())) && (this.buttonGroup2.isSelected(this.jRadioButton5.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton6.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton7.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton8.getModel())) && (this.buttonGroup3.isSelected(this.jRadioButton9.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton10.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton11.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton12.getModel())) && (this.buttonGroup4.isSelected(this.jRadioButton13.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton14.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton15.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton16.getModel())) && (this.buttonGroup5.isSelected(this.jRadioButton17.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton18.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton19.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton20.getModel())) && (this.buttonGroup6.isSelected(this.jRadioButton21.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton22.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton23.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton24.getModel())))
-            {
-                if((this.buttonGroup1.isSelected(this.jRadioButton1.getModel())))
-                    Stsc +=3;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton2.getModel())))
-                    Stsc +=2;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton3.getModel())))
-                    Stsc +=1;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton4.getModel())))
-                    Stsc +=0;
-                if((this.buttonGroup2.isSelected(this.jRadioButton5.getModel())))
-                    Stsc +=3;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton6.getModel())))
-                    Stsc +=2;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton7.getModel())))
-                    Stsc +=1;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton8.getModel())))
-                    Stsc +=0;
-                if((this.buttonGroup3.isSelected(this.jRadioButton9.getModel())))
-                    Stsc +=3;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton10.getModel())))
-                    Stsc +=2;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton11.getModel())))
-                    Stsc +=1;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton12.getModel())))
-                    Stsc +=0;
-                if((this.buttonGroup4.isSelected(this.jRadioButton13.getModel())))
-                    Stsc +=3;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton14.getModel())))
-                    Stsc +=2;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton15.getModel())))
-                    Stsc +=1;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton16.getModel())))
-                    Stsc +=0;
-                if((this.buttonGroup5.isSelected(this.jRadioButton17.getModel())))
-                    Stsc +=3;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton18.getModel())))
-                    Stsc +=2;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton19.getModel())))
-                    Stsc +=1;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton20.getModel())))
-                    Stsc +=0;
-                if((this.buttonGroup6.isSelected(this.jRadioButton21.getModel())))
-                    Stsc +=3;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton22.getModel())))
-                    Stsc +=2;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton23.getModel())))
-                    Stsc +=1;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton24.getModel())))
-                    Stsc +=0;
-                
-                
+        if (label.equalsIgnoreCase("Submit Stress Test")) {
+            if ((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton2.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton3.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton4.getModel())) && (this.buttonGroup2.isSelected(this.jRadioButton5.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton6.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton7.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton8.getModel())) && (this.buttonGroup3.isSelected(this.jRadioButton9.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton10.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton11.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton12.getModel())) && (this.buttonGroup4.isSelected(this.jRadioButton13.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton14.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton15.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton16.getModel())) && (this.buttonGroup5.isSelected(this.jRadioButton17.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton18.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton19.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton20.getModel())) && (this.buttonGroup6.isSelected(this.jRadioButton21.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton22.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton23.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton24.getModel()))) {
+                if ((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()))) {
+                    Stsc += 3;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton2.getModel()))) {
+                    Stsc += 2;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton3.getModel()))) {
+                    Stsc += 1;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton4.getModel()))) {
+                    Stsc += 0;
+                }
+                if ((this.buttonGroup2.isSelected(this.jRadioButton5.getModel()))) {
+                    Stsc += 3;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton6.getModel()))) {
+                    Stsc += 2;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton7.getModel()))) {
+                    Stsc += 1;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton8.getModel()))) {
+                    Stsc += 0;
+                }
+                if ((this.buttonGroup3.isSelected(this.jRadioButton9.getModel()))) {
+                    Stsc += 3;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton10.getModel()))) {
+                    Stsc += 2;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton11.getModel()))) {
+                    Stsc += 1;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton12.getModel()))) {
+                    Stsc += 0;
+                }
+                if ((this.buttonGroup4.isSelected(this.jRadioButton13.getModel()))) {
+                    Stsc += 3;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton14.getModel()))) {
+                    Stsc += 2;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton15.getModel()))) {
+                    Stsc += 1;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton16.getModel()))) {
+                    Stsc += 0;
+                }
+                if ((this.buttonGroup5.isSelected(this.jRadioButton17.getModel()))) {
+                    Stsc += 3;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton18.getModel()))) {
+                    Stsc += 2;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton19.getModel()))) {
+                    Stsc += 1;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton20.getModel()))) {
+                    Stsc += 0;
+                }
+                if ((this.buttonGroup6.isSelected(this.jRadioButton21.getModel()))) {
+                    Stsc += 3;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton22.getModel()))) {
+                    Stsc += 2;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton23.getModel()))) {
+                    Stsc += 1;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton24.getModel()))) {
+                    Stsc += 0;
+                }
+
                 this.jLabel1.setText("Anxiety test");
                 take_test.setText("Submit Anxiety Test");
                 this.jTextArea2.setText("Answer the questions below");
-                this.jLabel3.setText("In the past 2 weeks, how often "+mng.getAnxiety(0));
-                this.jLabel4.setText("In the past 2 weeks, how often "+mng.getAnxiety(1));
+                this.jLabel3.setText("In the past 2 weeks, how often " + mng.getAnxiety(0));
+                this.jLabel4.setText("In the past 2 weeks, how often " + mng.getAnxiety(1));
                 this.jLabel5.setText("In the past 2 weeks, how often did you fear,being over-worked?");
-                this.jLabel6.setText("In the past 2 weeks, how often "+mng.getAnxiety(3));
-                this.jLabel7.setText("In the past 2 weeks, how often "+mng.getAnxiety(4));
-                this.jLabel8.setText("In the past 2 weeks, how often "+mng.getAnxiety(5));
-                
+                this.jLabel6.setText("In the past 2 weeks, how often " + mng.getAnxiety(3));
+                this.jLabel7.setText("In the past 2 weeks, how often " + mng.getAnxiety(4));
+                this.jLabel8.setText("In the past 2 weeks, how often " + mng.getAnxiety(5));
+
                 this.buttonGroup1.clearSelection();
                 this.buttonGroup2.clearSelection();
                 this.buttonGroup3.clearSelection();
                 this.buttonGroup4.clearSelection();
                 this.buttonGroup5.clearSelection();
                 this.buttonGroup6.clearSelection();
-                
-           
+
+            } else {
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "Answer all questions");
             }
-            else
-            {
-                JFrame f = new JFrame();  
-                JOptionPane.showMessageDialog(f,"Answer all questions");  
-            }
-           
-        }
-        else if(label.equalsIgnoreCase("Submit Anxiety Test"))
-        {
-            if((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton2.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton3.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton4.getModel())) && (this.buttonGroup2.isSelected(this.jRadioButton5.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton6.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton7.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton8.getModel())) && (this.buttonGroup3.isSelected(this.jRadioButton9.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton10.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton11.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton12.getModel())) && (this.buttonGroup4.isSelected(this.jRadioButton13.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton14.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton15.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton16.getModel())) && (this.buttonGroup5.isSelected(this.jRadioButton17.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton18.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton19.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton20.getModel())) && (this.buttonGroup6.isSelected(this.jRadioButton21.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton22.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton23.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton24.getModel())))
-            {
-                if((this.buttonGroup1.isSelected(this.jRadioButton1.getModel())))
-                    Ansc +=3;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton2.getModel())))
-                    Ansc +=2;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton3.getModel())))
-                    Ansc +=1;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton4.getModel())))
-                    Ansc +=0;
-                if((this.buttonGroup2.isSelected(this.jRadioButton5.getModel())))
-                    Ansc +=3;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton6.getModel())))
-                    Ansc +=2;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton7.getModel())))
-                    Ansc +=1;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton8.getModel())))
-                    Ansc +=0;
-                if((this.buttonGroup3.isSelected(this.jRadioButton9.getModel())))
-                    Ansc +=3;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton10.getModel())))
-                    Ansc +=2;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton11.getModel())))
-                    Ansc +=1;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton12.getModel())))
-                    Ansc +=0;
-                if((this.buttonGroup4.isSelected(this.jRadioButton13.getModel())))
-                    Ansc +=3;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton14.getModel())))
-                    Ansc +=2;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton15.getModel())))
-                    Ansc +=1;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton16.getModel())))
-                    Ansc +=0;
-                if((this.buttonGroup5.isSelected(this.jRadioButton17.getModel())))
-                    Ansc +=3;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton18.getModel())))
-                    Ansc +=2;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton19.getModel())))
-                    Ansc +=1;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton20.getModel())))
-                    Ansc +=0;
-                if((this.buttonGroup6.isSelected(this.jRadioButton21.getModel())))
-                    Ansc +=3;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton22.getModel())))
-                    Ansc +=2;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton23.getModel())))
-                    Ansc +=1;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton24.getModel())))
-                    Ansc +=0;
-                
-                
+
+        } else if (label.equalsIgnoreCase("Submit Anxiety Test")) {
+            if ((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton2.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton3.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton4.getModel())) && (this.buttonGroup2.isSelected(this.jRadioButton5.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton6.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton7.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton8.getModel())) && (this.buttonGroup3.isSelected(this.jRadioButton9.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton10.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton11.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton12.getModel())) && (this.buttonGroup4.isSelected(this.jRadioButton13.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton14.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton15.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton16.getModel())) && (this.buttonGroup5.isSelected(this.jRadioButton17.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton18.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton19.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton20.getModel())) && (this.buttonGroup6.isSelected(this.jRadioButton21.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton22.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton23.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton24.getModel()))) {
+                if ((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()))) {
+                    Ansc += 3;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton2.getModel()))) {
+                    Ansc += 2;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton3.getModel()))) {
+                    Ansc += 1;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton4.getModel()))) {
+                    Ansc += 0;
+                }
+                if ((this.buttonGroup2.isSelected(this.jRadioButton5.getModel()))) {
+                    Ansc += 3;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton6.getModel()))) {
+                    Ansc += 2;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton7.getModel()))) {
+                    Ansc += 1;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton8.getModel()))) {
+                    Ansc += 0;
+                }
+                if ((this.buttonGroup3.isSelected(this.jRadioButton9.getModel()))) {
+                    Ansc += 3;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton10.getModel()))) {
+                    Ansc += 2;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton11.getModel()))) {
+                    Ansc += 1;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton12.getModel()))) {
+                    Ansc += 0;
+                }
+                if ((this.buttonGroup4.isSelected(this.jRadioButton13.getModel()))) {
+                    Ansc += 3;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton14.getModel()))) {
+                    Ansc += 2;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton15.getModel()))) {
+                    Ansc += 1;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton16.getModel()))) {
+                    Ansc += 0;
+                }
+                if ((this.buttonGroup5.isSelected(this.jRadioButton17.getModel()))) {
+                    Ansc += 3;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton18.getModel()))) {
+                    Ansc += 2;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton19.getModel()))) {
+                    Ansc += 1;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton20.getModel()))) {
+                    Ansc += 0;
+                }
+                if ((this.buttonGroup6.isSelected(this.jRadioButton21.getModel()))) {
+                    Ansc += 3;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton22.getModel()))) {
+                    Ansc += 2;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton23.getModel()))) {
+                    Ansc += 1;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton24.getModel()))) {
+                    Ansc += 0;
+                }
+
                 this.jLabel1.setText("Depression test");
                 take_test.setText("Submit Depression Test");
                 this.jTextArea2.setText("Answer the questions below");
-                this.jLabel3.setText("In last week, how often did you have:"+mng.getDepression(0));
-                this.jLabel4.setText("In last week, how often did you have:"+mng.getDepression(1));
-                this.jLabel5.setText("In last week, how often did you have:"+mng.getDepression(2));
-                this.jLabel6.setText("In last week, how often did you have:"+mng.getDepression(3));
-                this.jLabel7.setText("In last week, how often did you have:"+mng.getDepression(4));
-                this.jLabel8.setText("In last week, how often did you have:"+mng.getDepression(5));
-                
+                this.jLabel3.setText("In last week, how often did you have:" + mng.getDepression(0));
+                this.jLabel4.setText("In last week, how often did you have:" + mng.getDepression(1));
+                this.jLabel5.setText("In last week, how often did you have:" + mng.getDepression(2));
+                this.jLabel6.setText("In last week, how often did you have:" + mng.getDepression(3));
+                this.jLabel7.setText("In last week, how often did you have:" + mng.getDepression(4));
+                this.jLabel8.setText("In last week, how often did you have:" + mng.getDepression(5));
+
                 this.buttonGroup1.clearSelection();
                 this.buttonGroup2.clearSelection();
                 this.buttonGroup3.clearSelection();
                 this.buttonGroup4.clearSelection();
                 this.buttonGroup5.clearSelection();
                 this.buttonGroup6.clearSelection();
-                
-                
-           
+
+            } else {
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "Answer all questions");
             }
-            else
-            {
-                JFrame f = new JFrame();  
-                JOptionPane.showMessageDialog(f,"Answer all questions");  
-            }
-           
-        
+
         }
-        if(label.equalsIgnoreCase("Submit Depression Test"))
-        {
-        /*this.jTextArea1.setVisible(false);
+        if (label.equalsIgnoreCase("Submit Depression Test")) {
+            /*this.jTextArea1.setVisible(false);
         this.take_test.setVisible(false);
         this.jPanel4.setVisible(false);*/
-        
-        
-        //this.jPanel2.add(this.jPanel6);
-            if((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton2.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton3.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton4.getModel())) && (this.buttonGroup2.isSelected(this.jRadioButton5.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton6.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton7.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton8.getModel())) && (this.buttonGroup3.isSelected(this.jRadioButton9.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton10.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton11.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton12.getModel())) && (this.buttonGroup4.isSelected(this.jRadioButton13.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton14.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton15.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton16.getModel())) && (this.buttonGroup5.isSelected(this.jRadioButton17.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton18.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton19.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton20.getModel())) && (this.buttonGroup6.isSelected(this.jRadioButton21.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton22.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton23.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton24.getModel())))
-            {
-                if((this.buttonGroup1.isSelected(this.jRadioButton1.getModel())))
-                    Desc +=3;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton2.getModel())))
-                    Desc +=2;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton3.getModel())))
-                    Desc +=1;
-                else if((this.buttonGroup1.isSelected(this.jRadioButton4.getModel())))
-                    Desc +=0;
-                if((this.buttonGroup2.isSelected(this.jRadioButton5.getModel())))
-                    Desc +=3;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton6.getModel())))
-                    Desc +=2;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton7.getModel())))
-                    Desc +=1;
-                else if((this.buttonGroup2.isSelected(this.jRadioButton8.getModel())))
-                    Desc +=0;
-                if((this.buttonGroup3.isSelected(this.jRadioButton9.getModel())))
-                    Desc +=3;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton10.getModel())))
-                    Desc +=2;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton11.getModel())))
-                    Desc +=1;
-                else if((this.buttonGroup3.isSelected(this.jRadioButton12.getModel())))
-                    Desc +=0;
-                if((this.buttonGroup4.isSelected(this.jRadioButton13.getModel())))
-                    Desc +=3;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton14.getModel())))
-                    Desc +=2;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton15.getModel())))
-                   Desc +=1;
-                else if((this.buttonGroup4.isSelected(this.jRadioButton16.getModel())))
-                    Desc +=0;
-                if((this.buttonGroup5.isSelected(this.jRadioButton17.getModel())))
-                    Desc +=3;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton18.getModel())))
-                    Desc +=2;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton19.getModel())))
-                    Desc +=1;
-                else if((this.buttonGroup5.isSelected(this.jRadioButton20.getModel())))
-                    Desc +=0;
-                if((this.buttonGroup6.isSelected(this.jRadioButton21.getModel())))
-                    Desc +=3;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton22.getModel())))
-                    Desc +=2;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton23.getModel())))
-                    Desc +=1;
-                else if((this.buttonGroup6.isSelected(this.jRadioButton24.getModel())))
-                    Desc +=0;
-                
-            
-            ent.setDepressionScore(Desc);
-            ent.setAnxietyScore(Ansc);
-            ent.setStressScore(Stsc);
-            
-            String feedback = mng.feedback(ent.getStressScore(), ent.getAnxietyScore(), ent.getDepressionScore());
-            /*String feedback = "";
+
+            //this.jPanel2.add(this.jPanel6);
+            if ((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton2.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton3.getModel()) || this.buttonGroup1.isSelected(this.jRadioButton4.getModel())) && (this.buttonGroup2.isSelected(this.jRadioButton5.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton6.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton7.getModel()) || this.buttonGroup2.isSelected(this.jRadioButton8.getModel())) && (this.buttonGroup3.isSelected(this.jRadioButton9.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton10.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton11.getModel()) || this.buttonGroup3.isSelected(this.jRadioButton12.getModel())) && (this.buttonGroup4.isSelected(this.jRadioButton13.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton14.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton15.getModel()) || this.buttonGroup4.isSelected(this.jRadioButton16.getModel())) && (this.buttonGroup5.isSelected(this.jRadioButton17.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton18.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton19.getModel()) || this.buttonGroup5.isSelected(this.jRadioButton20.getModel())) && (this.buttonGroup6.isSelected(this.jRadioButton21.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton22.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton23.getModel()) || this.buttonGroup6.isSelected(this.jRadioButton24.getModel()))) {
+                if ((this.buttonGroup1.isSelected(this.jRadioButton1.getModel()))) {
+                    Desc += 3;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton2.getModel()))) {
+                    Desc += 2;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton3.getModel()))) {
+                    Desc += 1;
+                } else if ((this.buttonGroup1.isSelected(this.jRadioButton4.getModel()))) {
+                    Desc += 0;
+                }
+                if ((this.buttonGroup2.isSelected(this.jRadioButton5.getModel()))) {
+                    Desc += 3;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton6.getModel()))) {
+                    Desc += 2;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton7.getModel()))) {
+                    Desc += 1;
+                } else if ((this.buttonGroup2.isSelected(this.jRadioButton8.getModel()))) {
+                    Desc += 0;
+                }
+                if ((this.buttonGroup3.isSelected(this.jRadioButton9.getModel()))) {
+                    Desc += 3;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton10.getModel()))) {
+                    Desc += 2;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton11.getModel()))) {
+                    Desc += 1;
+                } else if ((this.buttonGroup3.isSelected(this.jRadioButton12.getModel()))) {
+                    Desc += 0;
+                }
+                if ((this.buttonGroup4.isSelected(this.jRadioButton13.getModel()))) {
+                    Desc += 3;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton14.getModel()))) {
+                    Desc += 2;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton15.getModel()))) {
+                    Desc += 1;
+                } else if ((this.buttonGroup4.isSelected(this.jRadioButton16.getModel()))) {
+                    Desc += 0;
+                }
+                if ((this.buttonGroup5.isSelected(this.jRadioButton17.getModel()))) {
+                    Desc += 3;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton18.getModel()))) {
+                    Desc += 2;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton19.getModel()))) {
+                    Desc += 1;
+                } else if ((this.buttonGroup5.isSelected(this.jRadioButton20.getModel()))) {
+                    Desc += 0;
+                }
+                if ((this.buttonGroup6.isSelected(this.jRadioButton21.getModel()))) {
+                    Desc += 3;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton22.getModel()))) {
+                    Desc += 2;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton23.getModel()))) {
+                    Desc += 1;
+                } else if ((this.buttonGroup6.isSelected(this.jRadioButton24.getModel()))) {
+                    Desc += 0;
+                }
+
+                ent.setDepressionScore(Desc);
+                ent.setAnxietyScore(Ansc);
+                ent.setStressScore(Stsc);
+
+                String feedback = mng.feedback(ent.getStressScore(), ent.getAnxietyScore(), ent.getDepressionScore());
+                /*String feedback = "";
             String opn = "";
         if(Stsc>=0 && Stsc<=18)
             opn+="You don't have any stress related disorder,";
@@ -854,61 +852,60 @@ public class TakeTestUI extends javax.swing.JFrame {
             opA+="severe anxiety ";
 
         feedback = opn+opA+op;*/
-            
-            
-            this.jLabel3.setVisible(false);
-            this.jLabel4.setVisible(false);
-            this.jLabel5.setVisible(false);
-            this.jLabel6.setVisible(false);
-            this.jLabel7.setVisible(false);
-            this.jLabel8.setVisible(false);
-            
-            this.jRadioButton1.setVisible(false);
-            this.jRadioButton2.setVisible(false);
-            this.jRadioButton3.setVisible(false);
-            this.jRadioButton4.setVisible(false);
-            this.jRadioButton5.setVisible(false);
-            this.jRadioButton6.setVisible(false);
-            this.jRadioButton7.setVisible(false);
-            this.jRadioButton8.setVisible(false);
-            this.jRadioButton9.setVisible(false);
-            this.jRadioButton10.setVisible(false);
-            this.jRadioButton11.setVisible(false);
-            this.jRadioButton12.setVisible(false);
-            this.jRadioButton13.setVisible(false);
-            this.jRadioButton14.setVisible(false);
-            this.jRadioButton15.setVisible(false);
-            this.jRadioButton16.setVisible(false);
-            this.jRadioButton17.setVisible(false);
-            this.jRadioButton18.setVisible(false);
-            this.jRadioButton19.setVisible(false);
-            this.jRadioButton20.setVisible(false);
-            this.jRadioButton21.setVisible(false);
-            this.jRadioButton22.setVisible(false);
-            this.jRadioButton23.setVisible(false);
-            this.jRadioButton24.setVisible(false);
-            
-            this.jLabel1.setText("Test Results");
-            
-            this.take_test.setText("Give preferences");
-            /*this.take_test.setLocation(300,450);
+
+                this.jLabel3.setVisible(false);
+                this.jLabel4.setVisible(false);
+                this.jLabel5.setVisible(false);
+                this.jLabel6.setVisible(false);
+                this.jLabel7.setVisible(false);
+                this.jLabel8.setVisible(false);
+
+                this.jRadioButton1.setVisible(false);
+                this.jRadioButton2.setVisible(false);
+                this.jRadioButton3.setVisible(false);
+                this.jRadioButton4.setVisible(false);
+                this.jRadioButton5.setVisible(false);
+                this.jRadioButton6.setVisible(false);
+                this.jRadioButton7.setVisible(false);
+                this.jRadioButton8.setVisible(false);
+                this.jRadioButton9.setVisible(false);
+                this.jRadioButton10.setVisible(false);
+                this.jRadioButton11.setVisible(false);
+                this.jRadioButton12.setVisible(false);
+                this.jRadioButton13.setVisible(false);
+                this.jRadioButton14.setVisible(false);
+                this.jRadioButton15.setVisible(false);
+                this.jRadioButton16.setVisible(false);
+                this.jRadioButton17.setVisible(false);
+                this.jRadioButton18.setVisible(false);
+                this.jRadioButton19.setVisible(false);
+                this.jRadioButton20.setVisible(false);
+                this.jRadioButton21.setVisible(false);
+                this.jRadioButton22.setVisible(false);
+                this.jRadioButton23.setVisible(false);
+                this.jRadioButton24.setVisible(false);
+
+                this.jLabel1.setText("Test Results");
+
+                this.take_test.setText("Give preferences");
+                /*this.take_test.setLocation(300,450);
             this.jPanel6.revalidate();
             this.jPanel6.repaint();*/
-            //this.jPanel6.add(new JLabel(" "))
-            this.jTextArea2.setVisible(true);
-            this.jTextArea2.setText(feedback);
-            
-            
-        }
-        
-        else
-            {
-                JFrame f = new JFrame();  
-                JOptionPane.showMessageDialog(f,"Answer all questions");  
+                //this.jPanel6.add(new JLabel(" "))
+                this.jTextArea2.setVisible(true);
+                this.jTextArea2.setText(feedback);
+
             }
-        
+             else {
+                JFrame f = new JFrame();
+                JOptionPane.showMessageDialog(f, "Answer all questions");
+            }
+
         }
-       /* else
+        if (label.equalsIgnoreCase("Give preferences")) {
+                mgr.showPU();
+         }
+        /* else
         {
              this.jLabel1.setText("Stress Test");
             this.jPanel6.setVisible(true);
@@ -930,14 +927,14 @@ public class TakeTestUI extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-//        mgr.showSU();
+        mgr.showMMU();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
-//        mgr.showSU();
+        mgr.showMMU();
     }//GEN-LAST:event_jLabel11MouseClicked
-    
+
     /**
      * @param args the command line arguments
      */
@@ -968,7 +965,7 @@ public class TakeTestUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TakeTestUI().setVisible(true);
+//                new TakeTestUI().setVisible(true);
             }
         });
     }

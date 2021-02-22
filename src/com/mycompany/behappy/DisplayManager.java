@@ -28,6 +28,7 @@ public class DisplayManager {
     login L;
     Refreshment_Menu RM;
     BehappyManager BHM;
+    TakeTestUI TTU;
 //    StartManager SMgr;
 //    LoginManager LMgr;
 //    FindTherapistManager FTMgr;
@@ -55,6 +56,7 @@ public class DisplayManager {
         S2.setVisible(false);
         L.setVisible(false);
         RM.setVisible(false);
+        TTU.setVisible(false);
     }
 
     public void showSU() {
@@ -134,7 +136,10 @@ public class DisplayManager {
         this.hideALL();
         RM.setVisible(true);
     }
-
+    public void showTTU(){
+        this.hideALL();
+        TTU.setVisible(true);
+    }
     public static void main(String[] args) {
         DisplayManager DM = new DisplayManager();
 //        DM.SMgr=new StartManager();
@@ -159,6 +164,7 @@ public class DisplayManager {
         DM.S2 = new Story2GUI(DM);
         DM.L = new login(DM);
         DM.RM = new Refreshment_Menu(DM);
+        DM.TTU=new TakeTestUI(DM);
         DM.showSU();
     }
 

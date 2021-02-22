@@ -20,12 +20,12 @@ public class TakeTestManager
     }
     public void init()
     {
-        StressQuestions = new String[6][7];
-        headersStress = new String[7];
-        AnxietyQuestions = new String[6][6];
-        headersAnxiety  = new String[6];
-        DepressionQuestions = new String[6][6];
-        headersDepression = new String[6];
+        StressQuestions = new String[8][8];
+        headersStress = new String[8];
+        AnxietyQuestions = new String[8][8];
+        headersAnxiety  = new String[8];
+        DepressionQuestions = new String[8][8];
+        headersDepression = new String[8];
         Stress();
         Anxiety();
         Depression();

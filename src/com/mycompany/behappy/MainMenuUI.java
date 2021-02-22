@@ -199,7 +199,7 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     private void ttMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ttMouseClicked
         // TODO add your handling code here:
-        mgr.showPU();
+        mgr.showTTU();
     }//GEN-LAST:event_ttMouseClicked
 
     /**

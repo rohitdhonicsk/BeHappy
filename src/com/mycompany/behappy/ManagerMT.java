@@ -236,7 +236,7 @@ public class ManagerMT {
                     if (added) {
                         GlobalId = Integer.toString(Integer.parseInt(Info[0]) + 1);
                         Info[0] = GlobalId;
-                        if (Info[1].equals(addedCity)) {
+                        if (Info[1].equalsIgnoreCase(addedCity)) {
                             Info[2] = Integer.toString(Integer.parseInt(Info[2]) + 1);
                         }
                         currentLine = String.join(",", Info);
@@ -303,7 +303,7 @@ public class ManagerMT {
                 if (Deleted) {
                     String GlobalId = Integer.toString(Integer.parseInt(Info[0]) - 1);
                     Info[0] = GlobalId;
-                    if (Info[1].equals(DeletedCity)) {
+                    if (Info[1].equalsIgnoreCase(DeletedCity)) {
                         Info[2] = Integer.toString(Integer.parseInt(Info[2]) - 1);
                     }
                     currentLine = String.join(",", Info);

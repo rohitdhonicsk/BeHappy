@@ -30,7 +30,7 @@ public class TakeTestUI extends javax.swing.JFrame {
 
         initComponents();
         this.setLocationRelativeTo(null);
-
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
         mng = new TakeTestManager();
         ent = new TakeTestEntity();
         stressScreen();
@@ -220,6 +220,7 @@ public class TakeTestUI extends javax.swing.JFrame {
         });
 
         jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel6.setBackground(new java.awt.Color(147, 205, 186));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));

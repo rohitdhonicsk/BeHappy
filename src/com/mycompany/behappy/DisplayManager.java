@@ -27,14 +27,8 @@ public class DisplayManager {
     Story2GUI S2;
     login L;
     Refreshment_Menu RM;
-    BehappyManager BHM;
     TakeTestUI TTU;
-//    StartManager SMgr;
-//    LoginManager LMgr;
-//    FindTherapistManager FTMgr;
-//    Manager Mgr;
-//    ManagerMT MMTMgr;
-//    RManager RMgr;
+    BehappyManager BHM;
     
     public DisplayManager() {
 
@@ -140,32 +134,26 @@ public class DisplayManager {
         this.hideALL();
         TTU.setVisible(true);
     }
-    public static void main(String[] args) {
-        DisplayManager DM = new DisplayManager();
-//        DM.SMgr=new StartManager();
-//        DM.LMgr=new LoginManager();
-//        DM.FTMgr=new FindTherapistManager();
-//        DM.Mgr=new Manager();
-//        DM.MMTMgr=new ManagerMT();
-//        DM.RMgr=new RManager();
-        DM.BHM=new BehappyManager();
-        DM.SU = new StartUI(DM);
-        DM.FTR = new FindTherapistsResultUI(DM);
-        DM.MMU = new MainMenuUI(DM);
-        DM.MTMU = new ManageTherapistMainUI(DM);
-        DM.MTAU = new ManageTherapistAddUI(DM);
-
-        DM.MTDSU = new ManageTherapistDSUUI(DM);
-        DM.PU = new PreferencesUI(DM);
-        DM.QG = new QuoteGUI(DM);
-        DM.ST = new SearchTherapistUI(DM);
-        DM.SG = new SongGUI(DM);
-        DM.S1 = new Story1GUI(DM);
-        DM.S2 = new Story2GUI(DM);
-        DM.L = new login(DM);
-        DM.RM = new Refreshment_Menu(DM);
-        DM.TTU=new TakeTestUI(DM);
-        DM.showSU();
-    }
+//    public static void main(String[] args) {
+//        DisplayManager DM = new DisplayManager();
+//        DM.BHM=new BehappyManager();
+//        DM.SU = new StartUI(DM);
+//        DM.FTR = new FindTherapistsResultUI(DM);
+//        DM.MMU = new MainMenuUI(DM);
+//        DM.MTMU = new ManageTherapistMainUI(DM);
+//        DM.MTAU = new ManageTherapistAddUI(DM);
+//
+//        DM.MTDSU = new ManageTherapistDSUUI(DM);
+//        DM.PU = new PreferencesUI(DM);
+//        DM.QG = new QuoteGUI(DM);
+//        DM.ST = new SearchTherapistUI(DM);
+//        DM.SG = new SongGUI(DM);
+//        DM.S1 = new Story1GUI(DM);
+//        DM.S2 = new Story2GUI(DM);
+//        DM.L = new login(DM);
+//        DM.RM = new Refreshment_Menu(DM);
+//        DM.TTU=new TakeTestUI(DM);
+//        DM.showSU();
+//    }
 
 }

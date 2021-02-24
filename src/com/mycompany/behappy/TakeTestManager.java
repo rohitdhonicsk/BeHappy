@@ -32,7 +32,7 @@ public class TakeTestManager
         Depression();
         
     }
-    public Stress()
+    public void Stress()
     {
         String line = "";  
         String splitBy = ",";

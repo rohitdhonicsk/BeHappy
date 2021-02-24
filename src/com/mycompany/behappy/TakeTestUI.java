@@ -18,7 +18,7 @@ public class TakeTestUI extends javax.swing.JFrame {
     /**
      * Creates new form TakeTestUI
      */
-    private TakeTestManager mng;
+    
     private TakeTestEntity ent;
     private int Stsc = 0;
     private int Ansc = 0;
@@ -31,7 +31,7 @@ public class TakeTestUI extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
-        mng = new TakeTestManager();
+       
         ent = new TakeTestEntity();
         stressScreen();
         //this.jPanel6.setVisible(true);
@@ -576,12 +576,12 @@ public class TakeTestUI extends javax.swing.JFrame {
         take_test.setText("Submit Stress Test");
 
         this.jTextArea2.setText("Answer the questions below");
-        this.jLabel3.setText("In last week " + mng.getStress(0));
-        this.jLabel4.setText("In last week " + mng.getStress(1));
-        this.jLabel5.setText("In last week " + mng.getStress(2));
-        this.jLabel6.setText("In last week " + mng.getStress(3));
-        this.jLabel7.setText("In last week " + mng.getStress(4));
-        this.jLabel8.setText("In last week " + mng.getStress(5));
+        this.jLabel3.setText("In last week " + mgr.BHM.TTMgr.getStress(0));
+        this.jLabel4.setText("In last week " + mgr.BHM.TTMgr.getStress(1));
+        this.jLabel5.setText("In last week " + mgr.BHM.TTMgr.getStress(2));
+        this.jLabel6.setText("In last week " + mgr.BHM.TTMgr.getStress(3));
+        this.jLabel7.setText("In last week " + mgr.BHM.TTMgr.getStress(4));
+        this.jLabel8.setText("In last week " + mgr.BHM.TTMgr.getStress(5));
     }
     private void take_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_take_testActionPerformed
         // TODO add your handling code here:
@@ -656,12 +656,12 @@ public class TakeTestUI extends javax.swing.JFrame {
                 this.jLabel1.setText("Anxiety test");
                 take_test.setText("Submit Anxiety Test");
                 this.jTextArea2.setText("Answer the questions below");
-                this.jLabel3.setText("In the past 2 weeks, how often " + mng.getAnxiety(0));
-                this.jLabel4.setText("In the past 2 weeks, how often " + mng.getAnxiety(1));
+                this.jLabel3.setText("In the past 2 weeks, how often " + mgr.BHM.TTMgr.getAnxiety(0));
+                this.jLabel4.setText("In the past 2 weeks, how often " + mgr.BHM.TTMgr.getAnxiety(1));
                 this.jLabel5.setText("In the past 2 weeks, how often did you fear,being over-worked?");
-                this.jLabel6.setText("In the past 2 weeks, how often " + mng.getAnxiety(3));
-                this.jLabel7.setText("In the past 2 weeks, how often " + mng.getAnxiety(4));
-                this.jLabel8.setText("In the past 2 weeks, how often " + mng.getAnxiety(5));
+                this.jLabel6.setText("In the past 2 weeks, how often " + mgr.BHM.TTMgr.getAnxiety(3));
+                this.jLabel7.setText("In the past 2 weeks, how often " +mgr.BHM.TTMgr.getAnxiety(4));
+                this.jLabel8.setText("In the past 2 weeks, how often " + mgr.BHM.TTMgr.getAnxiety(5));
 
                 this.buttonGroup1.clearSelection();
                 this.buttonGroup2.clearSelection();
@@ -735,12 +735,12 @@ public class TakeTestUI extends javax.swing.JFrame {
                 this.jLabel1.setText("Depression test");
                 take_test.setText("Submit Depression Test");
                 this.jTextArea2.setText("Answer the questions below");
-                this.jLabel3.setText("In last week, how often did you have:" + mng.getDepression(0));
-                this.jLabel4.setText("In last week, how often did you have:" + mng.getDepression(1));
-                this.jLabel5.setText("In last week, how often did you have:" + mng.getDepression(2));
-                this.jLabel6.setText("In last week, how often did you have:" + mng.getDepression(3));
-                this.jLabel7.setText("In last week, how often did you have:" + mng.getDepression(4));
-                this.jLabel8.setText("In last week, how often did you have:" + mng.getDepression(5));
+                this.jLabel3.setText("In last week, how often did you have:" + mgr.BHM.TTMgr.getDepression(0));
+                this.jLabel4.setText("In last week, how often did you have:" + mgr.BHM.TTMgr.getDepression(1));
+                this.jLabel5.setText("In last week, how often did you have:" + mgr.BHM.TTMgr.getDepression(2));
+                this.jLabel6.setText("In last week, how often did you have:" + mgr.BHM.TTMgr.getDepression(3));
+                this.jLabel7.setText("In last week, how often did you have:" + mgr.BHM.TTMgr.getDepression(4));
+                this.jLabel8.setText("In last week, how often did you have:" + mgr.BHM.TTMgr.getDepression(5));
 
                 this.buttonGroup1.clearSelection();
                 this.buttonGroup2.clearSelection();
@@ -821,7 +821,7 @@ public class TakeTestUI extends javax.swing.JFrame {
                 ent.setAnxietyScore(Ansc);
                 ent.setStressScore(Stsc);
 
-                String feedback = mng.feedback(ent.getStressScore(), ent.getAnxietyScore(), ent.getDepressionScore());
+                String feedback = mgr.BHM.TTMgr.feedback(ent.getStressScore(), ent.getAnxietyScore(), ent.getDepressionScore());
                 /*String feedback = "";
             String opn = "";
         if(Stsc>=0 && Stsc<=18)

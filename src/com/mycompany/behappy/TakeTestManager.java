@@ -16,22 +16,23 @@ public class TakeTestManager
 
     public TakeTestManager() 
     {
-        init();
-    }
-    public void init()
-    {
         StressQuestions = new String[8][8];
         headersStress = new String[8];
         AnxietyQuestions = new String[8][8];
         headersAnxiety  = new String[8];
         DepressionQuestions = new String[8][8];
         headersDepression = new String[8];
+        init();
+    }
+    public void init()
+    {
+        
         Stress();
         Anxiety();
         Depression();
         
     }
-    void Stress()
+    public Stress()
     {
         String line = "";  
         String splitBy = ",";

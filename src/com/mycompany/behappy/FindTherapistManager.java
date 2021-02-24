@@ -19,7 +19,7 @@ public class FindTherapistManager {
     /**
      * @param args the command line arguments
      */
-    ArrayList<Therapist> arrlist=importDatabase();
+    ArrayList<Therapist> arrlist;
     public static ArrayList importDatabase(){
         ArrayList<Therapist> arrlist=new ArrayList<>();
         
@@ -48,6 +48,7 @@ public class FindTherapistManager {
     }
     
     public  ArrayList<Therapist> recommend(String city,int budget){
+        arrlist=importDatabase();
         int i;
         ArrayList<Therapist> arr=new ArrayList<>();
         for(i=0;i<arrlist.size();i++){

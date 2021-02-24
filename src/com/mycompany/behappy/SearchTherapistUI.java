@@ -347,7 +347,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
         Combo.setBackground(new java.awt.Color(102, 102, 102));
         Combo.setForeground(new java.awt.Color(255, 255, 255));
-        Combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Delhi", "Pune", "Hyderabad", "Kolkata", "Ranchi" }));
+        Combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Delhi", "Pune", "Hyderabad", "Kolkata", "Ranchi", "Mumbai", "Bengaluru", "Chennai" }));
         Combo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 ComboItemStateChanged(evt);

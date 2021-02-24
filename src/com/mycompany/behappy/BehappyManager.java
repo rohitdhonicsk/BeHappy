@@ -16,7 +16,7 @@ public class BehappyManager {
     Manager Mgr;
     ManagerMT MMTMgr;
     RManager RMgr;
-    
+    TakeTestManager TTMgr;
     public BehappyManager(){
         SMgr=new StartManager();
         LMgr=new LoginManager();
@@ -24,6 +24,7 @@ public class BehappyManager {
         Mgr=new Manager();
         MMTMgr=new ManagerMT();
         RMgr=new RManager();
+        TTMgr=new TakeTestManager();
     }
     public static void main(String[] args) {
         DisplayManager DM = new DisplayManager();

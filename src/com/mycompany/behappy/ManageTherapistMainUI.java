@@ -106,6 +106,12 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
             }
         });
 
+        DELETELabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/RD.png"))); // NOI18N
+
+        SEARCHLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/RS.png"))); // NOI18N
+
+        ADDLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/RA.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(

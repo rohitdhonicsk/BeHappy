@@ -53,8 +53,8 @@ public class StartUI extends javax.swing.JFrame {
         jTextArea1.setText(mgr.BHM.SMgr.generateRandomString());
         jPanel2.add(jLabel1);
         jPanel2.add(jLabel3);
-        jLabel1.setBounds(600, 300, 100, 100);
-        jLabel3.setBounds(200, 300, 100, 100);
+        jLabel1.setBounds(600, 300, 100, 120);
+        jLabel3.setBounds(200, 300, 100, 120);
     }
     public void animate(){
         AnimationClass ac=new AnimationClass();
@@ -124,26 +124,32 @@ public class StartUI extends javax.swing.JFrame {
         jPanel2.setBounds(0, 0, 900, 600);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/administrative_tools_64px.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/administrative_tools_100px.png"))); // NOI18N
+        jLabel1.setText("Admin");
         jLabel1.setToolTipText("continue to admin login");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 64, 64);
+        jLabel1.setBounds(0, 0, 100, 117);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/next_100px.png"))); // NOI18N
+        jLabel3.setText("Continue");
         jLabel3.setToolTipText("contniue to next screen");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 100, 100);
+        jLabel3.setBounds(0, 0, 100, 117);
 
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);

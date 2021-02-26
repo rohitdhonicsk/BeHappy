@@ -40,7 +40,8 @@ public class FindTherapistManager {
 //            System.out.println(Arrays.toString(info));
             arrlist.add(t);
             }   
-         }
+        br.close(); 
+        }
         catch(Exception e){
             e.printStackTrace();
         }

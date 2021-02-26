@@ -16,6 +16,7 @@ try{
     String[] info = line.split(",");    // use comma as separator  
     data.put(info[0],info[1]);
     }
+br.close();
 }
 catch(Exception e){
 e.printStackTrace();

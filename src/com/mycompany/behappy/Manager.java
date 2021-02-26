@@ -153,6 +153,7 @@ public class Manager {
 //                if(Data.containsKey("kolkata") && Info[1].toLowerCase().equals("kolkata")){
 //                  System.out.println(" data Size "+Data.get("kolkata".toLowerCase()).size());}
             }
+            br.close();
 
         } catch (IOException e) {
             e.printStackTrace();

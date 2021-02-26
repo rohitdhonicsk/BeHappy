@@ -210,7 +210,7 @@ public class ManagerMT {
         try {
             boolean Found = searchData("-1", Person.getName(), Person.getContactNumber(), Person.getCity());
             if (!Found) {
-                File InputFile = new File("TherapistDataset.csv");
+
                 BufferedReader reader = new BufferedReader(new FileReader("TherapistDataset.csv"));
                 File tempFile = new File("Temp.csv");
                 BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
@@ -257,8 +257,10 @@ public class ManagerMT {
 //                System.out.println("\n00000ddd"+successful);
                 writer.close();
                 reader.close();
+                File InputFile = new File("TherapistDataset.csv");
                 InputFile.delete();
-                boolean successful = tempFile.renameTo(InputFile);
+                
+                boolean successful = tempFile.renameTo(new File("TherapistDataset.csv"));
                 System.out.println("\n00000ddd" + successful);
             } else {
                 System.out.println("Already Found Theapist");
@@ -274,9 +276,9 @@ public class ManagerMT {
         if (!CityId.equals("")) {
             Id = Integer.parseInt(CityId);
         }
-        
+//        System.out.println(CityId+" "+Name+" "+Contact+" "+City);
         try {
-            File InputFile = new File("TherapistDataset.csv");
+
             BufferedReader reader = new BufferedReader(new FileReader("TherapistDataset.csv"));
             File tempFile = new File("Temp.csv");
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
@@ -311,11 +313,16 @@ public class ManagerMT {
                 writer.write(currentLine + System.getProperty("line.separator"));
             }
             writer.close();
-            
+
             reader.close();
-            InputFile.delete();
+            
             if (Deleted) {
-                boolean successful = tempFile.renameTo(InputFile);
+                File InputFile = new File("TherapistDataset.csv");
+                
+                InputFile.delete();
+                
+                boolean successful = tempFile.renameTo(new File("TherapistDataset.csv"));
+                tempFile.delete();
                 System.out.println(successful);
                 System.out.println("Success Fully Deleted");
 
@@ -329,7 +336,7 @@ public class ManagerMT {
     }
 
     public static void main(String[] args) {
-        ManagerMT Obj = new ManagerMT();
+//        ManagerMT Obj = new ManagerMT();
     }
 
 }

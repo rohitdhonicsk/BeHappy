@@ -188,7 +188,7 @@ public class MusicGUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 88, 81));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Click on songs' title to play");
+        jLabel2.setText("Click on music title to play");
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/resume.png"))); // NOI18N
@@ -328,12 +328,12 @@ public class MusicGUI extends javax.swing.JFrame {
         this.jButton2.setEnabled(false);
         this.jButton3.setEnabled(false);
         this.jButton4.setEnabled(false);
-        this.jLabel2.setText("Click on story's title to play");
+        this.jLabel2.setText("Click on music title to play");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        this.jLabel2.setText("Click on story's title to play");
+        this.jLabel2.setText("Click on music title to play");
         this.jButton2.setEnabled(false);
         this.jButton3.setEnabled(false);
         this.jButton4.setEnabled(false);
@@ -353,7 +353,7 @@ public class MusicGUI extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        this.jLabel2.setText("Click on story's title to play");
+        this.jLabel2.setText("Click on music title to play");
         this.jButton2.setEnabled(false);
         this.jButton3.setEnabled(false);
         this.jButton4.setEnabled(false);

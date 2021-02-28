@@ -291,7 +291,7 @@
               <Color blue="51" green="58" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Click on songs&apos; title to play"/>
+            <Property name="text" type="java.lang.String" value="Click on music title to play"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">

@@ -22,7 +22,7 @@ public class DisplayManager {
     PreferencesUI PU;
     QuoteGUI QG;
     SearchTherapistUI ST;
-    SongGUI SG;
+    MusicGUI SG;
     Story1GUI S1;
     Story2GUI S2;
     login L;

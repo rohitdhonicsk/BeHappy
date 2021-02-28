@@ -16,24 +16,26 @@ import javax.swing.JTextArea;
  *
  * @author Saura
  */
-public class SongGUI extends javax.swing.JFrame {
+public class MusicGUI extends javax.swing.JFrame {
 
-    private ArrayList<MotivationalSong> MSG;
-    MotivationalSong msg;
+    private ArrayList<SoothingMusic> MSG;
+    SoothingMusic msg;
     private JTextArea[] jt;
+    private int x = 0;
 //    private RManager RM;
     DisplayManager mgr;
+
     /**
      * Creates new form SongGUI
      */
-    public SongGUI(DisplayManager mgr) {
-        this.mgr=mgr;
+    public MusicGUI(DisplayManager mgr) {
+        this.mgr = mgr;
         initComponents();
         this.setLocationRelativeTo(null);
 //        mgr.RMgr = new RManager();
         MSG = new ArrayList<>();
         MSG = mgr.BHM.RMgr.getListOfSongs();
-        this.displayListOFSongs();
+        this.displayListOFMusic();
     }
 
     /**
@@ -74,13 +76,13 @@ public class SongGUI extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Motivational ");
+        jLabel3.setText("Soothing");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Songs");
+        jLabel4.setText("Music");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -152,7 +154,7 @@ public class SongGUI extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 88, 81));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Soothing Musics");
+        jLabel5.setText("Feel the Music");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -239,6 +241,8 @@ public class SongGUI extends javax.swing.JFrame {
                 .addContainerGap(62, Short.MAX_VALUE))
         );
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         jPanel3.setBackground(new java.awt.Color(147, 205, 186));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 2, 0, 2, new java.awt.Color(0, 0, 0)));
         jPanel3.setLayout(new java.awt.GridBagLayout());
@@ -276,7 +280,7 @@ public class SongGUI extends javax.swing.JFrame {
         if (!title.equals("")) {
 
             this.jPanel3.removeAll();
-            MSG = mgr.BHM.RMgr.getSearchedSong(title);
+            MSG = mgr.BHM.RMgr.getSearchedSong(title.trim());
             if (MSG.isEmpty()) {
                 jLabel5.setText("OOPSIE,Nothing matched with: " + title);
             } else {
@@ -285,7 +289,7 @@ public class SongGUI extends javax.swing.JFrame {
             this.jPanel3.repaint();
             this.jPanel3.revalidate();
 
-            this.displayListOFSongs();
+            this.displayListOFMusic();
         } else {
             jLabel5.setText("Search Bar is empty!!!!!!");
         }
@@ -294,13 +298,13 @@ public class SongGUI extends javax.swing.JFrame {
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         // TODO add your handling code here:
         if (this.jTextField1.getText().equals("")) {
-            jLabel5.setText("Soothing Musics");
+            jLabel5.setText("Feel the Music");
             this.jPanel3.removeAll();
             String title = this.jTextField1.getText();
             MSG = mgr.BHM.RMgr.getListOfSongs();
             this.jPanel3.repaint();
             this.jPanel3.revalidate();
-            this.displayListOFSongs();
+            this.displayListOFMusic();
         }
     }//GEN-LAST:event_jTextField1KeyReleased
 
@@ -330,25 +334,52 @@ public class SongGUI extends javax.swing.JFrame {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
         this.jLabel2.setText("Click on story's title to play");
+        this.jButton2.setEnabled(false);
+        this.jButton3.setEnabled(false);
+        this.jButton4.setEnabled(false);
         mgr.BHM.RMgr.stopSong();
+        this.jTextField1.setText("");
+        jLabel5.setText("Feel the Music");
+        this.jPanel3.removeAll();
+        String title = this.jTextField1.getText();
+        MSG = mgr.BHM.RMgr.getListOfSongs();
+        this.jPanel3.repaint();
+        this.jPanel3.revalidate();
+        this.displayListOFMusic();
         mgr.showMMU();
+
+
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
         this.jLabel2.setText("Click on story's title to play");
+        this.jButton2.setEnabled(false);
+        this.jButton3.setEnabled(false);
+        this.jButton4.setEnabled(false);
         mgr.BHM.RMgr.stopSong();
+        this.jTextField1.setText("");
+        jLabel5.setText("Feel the Music");
+        this.jPanel3.removeAll();
+        String title = this.jTextField1.getText();
+        MSG = mgr.BHM.RMgr.getListOfSongs();
+        this.jPanel3.repaint();
+        this.jPanel3.revalidate();
+        this.displayListOFMusic();
         mgr.showRM();
-    
+
     }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public void displayListOFSongs() {
-        this.jButton2.setEnabled(false);
-        this.jButton3.setEnabled(false);
-        this.jButton4.setEnabled(false);
+    public void displayListOFMusic() {
+        if (x == 0) {
+            this.jButton2.setEnabled(false);
+            this.jButton3.setEnabled(false);
+            this.jButton4.setEnabled(false);
+            x++;
+        }
         int i = 0;
         int j = 0;
         boolean f = true;
@@ -357,13 +388,13 @@ public class SongGUI extends javax.swing.JFrame {
         constraints.anchor = GridBagConstraints.NORTHWEST;
         constraints.insets = new Insets(10, 15, 0, 20);
         //top,left,bottom,right;
-        Color color = new Color(147,205,186);
+        Color color = new Color(147, 205, 186);
         jt = new JTextArea[MSG.size()];
         for (i = 0; i < MSG.size(); i++) {
             JTextArea field = new JTextArea();
             field.setLineWrap(true);
             constraints.gridy = j++;
-            field.setText(MSG.get(i).getSongName());
+            field.setText(MSG.get(i).getMusicName());
             jt[i] = field;
             jt[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -411,15 +442,16 @@ public class SongGUI extends javax.swing.JFrame {
         }
 
     }
+
     public void mouseClick(java.awt.event.MouseEvent e) {
         this.jButton2.setEnabled(false);
         this.jButton3.setEnabled(true);
         this.jButton4.setEnabled(true);
         for (int i = 0; i < jt.length; i++) {
             if (e.getSource() == jt[i]) {
-                this.jLabel2.setText("Now playing:- "+jt[i].getText()+".mp3");
+                this.jLabel2.setText("Now playing:- " + jt[i].getText() + ".mp3");
                 msg = mgr.BHM.RMgr.getSelectedSong(jt[i].getText());
-                mgr.BHM.RMgr.startPlayingSong(msg.getSongName());
+                mgr.BHM.RMgr.startPlayingSong(msg.getMusicName());
             }
         }
     }
@@ -438,14 +470,15 @@ public class SongGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SongGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SongGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SongGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SongGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

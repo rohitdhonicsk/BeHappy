@@ -12,12 +12,12 @@ import javax.swing.JTextArea;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Saura
  */
 public class QuoteGUI extends javax.swing.JFrame {
+
     private ArrayList<MotivationalQuote> MQ;
 //    private RManager RM;
 
@@ -25,8 +25,9 @@ public class QuoteGUI extends javax.swing.JFrame {
      * Creates new form QuoteGUI
      */
     private DisplayManager mgr;
+
     public QuoteGUI(DisplayManager mgr) {
-        this.mgr=mgr;
+        this.mgr = mgr;
         initComponents();
         this.setLocationRelativeTo(null);
 //        mgr.RMgr = new RManager();
@@ -206,12 +207,11 @@ public class QuoteGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String title = this.jTextField1.getText();
         if (!title.equals("")) {
-            
 
             this.jPanel3.removeAll();
-            MQ = mgr.BHM.RMgr.getSearchedQuote(title);
+            MQ = mgr.BHM.RMgr.getSearchedQuote(title.trim());
             if (MQ.isEmpty()) {
-                jLabel1.setText("OOPSIE,Nothing matched with: "+title);
+                jLabel1.setText("OOPSIE,Nothing matched with: " + title);
             } else {
                 jLabel1.setText("Search: " + title);
             }
@@ -219,11 +219,10 @@ public class QuoteGUI extends javax.swing.JFrame {
             this.jPanel3.revalidate();
 
             this.displayListOFQuotes();
-        }
-        else{
+        } else {
             jLabel1.setText("Search Bar is empty!!!!!!");
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
@@ -241,12 +240,28 @@ public class QuoteGUI extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-       mgr.showRM();
+        this.jTextField1.setText("");
+        jLabel1.setText("Mental Health Quotes");
+        this.jPanel3.removeAll();
+        String title = this.jTextField1.getText();
+        MQ = mgr.BHM.RMgr.getListOfQuotes();
+        this.jPanel3.repaint();
+        this.jPanel3.revalidate();
+        this.displayListOFQuotes();
+        mgr.showRM();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-       mgr.showMMU();
+        this.jTextField1.setText("");
+        jLabel1.setText("Mental Health Quotes");
+        this.jPanel3.removeAll();
+        String title = this.jTextField1.getText();
+        MQ = mgr.BHM.RMgr.getListOfQuotes();
+        this.jPanel3.repaint();
+        this.jPanel3.revalidate();
+        this.displayListOFQuotes();
+        mgr.showMMU();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     /**
@@ -261,14 +276,14 @@ public class QuoteGUI extends javax.swing.JFrame {
         constraints.anchor = GridBagConstraints.NORTHWEST;
         constraints.insets = new Insets(10, 15, 0, 20);
         //top,left,bottom,right;
-        Color color=new Color(147,205,186);
+        Color color = new Color(147, 205, 186);
         Color color2 = new Color(0, 17, 51);
         for (i = 0; i < MQ.size(); i++) {
             JTextArea field = new JTextArea();
             field.setLineWrap(true);
             constraints.gridy = j++;
             field.setText(MQ.get(i).getQuote());
-            field.setFont(new Font("Gabriola",Font.BOLD, 22));
+            field.setFont(new Font("Gabriola", Font.BOLD, 22));
             field.setForeground(color2);
             field.setBackground(color);
             field.setBorder(null);
@@ -284,13 +299,13 @@ public class QuoteGUI extends javax.swing.JFrame {
             field2.setBorder(null);
             if (i < MQ.size() - 1) {
                 constraints.gridy = j++;
-                field2.setText( "- "+MQ.get(i).getAuthorName());
+                field2.setText("- " + MQ.get(i).getAuthorName());
 
                 jPanel3.add(field2, constraints);
                 constraints.insets = new Insets(60, 15, 0, 20);
             } else {
                 constraints.gridy = j;
-                field2.setText("- "+MQ.get(i).getAuthorName());
+                field2.setText("- " + MQ.get(i).getAuthorName());
                 constraints.weightx = 1;
                 constraints.weighty = 1;
                 jPanel3.add(field2, constraints);
@@ -300,6 +315,7 @@ public class QuoteGUI extends javax.swing.JFrame {
         }
 
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

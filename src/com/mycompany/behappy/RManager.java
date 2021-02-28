@@ -19,7 +19,7 @@ public class RManager {
 
     private ArrayList<MotivationalStory> MS;
     private ArrayList<MotivationalQuote> MQ;
-    private ArrayList<MotivationalSong> MSG;
+    private ArrayList<SoothingMusic> MSG;
     JFileChooser fileChooser;
     FileInputStream fileInputStream;
     BufferedInputStream bufferedInputStream;
@@ -97,8 +97,8 @@ public class RManager {
             while ((line = br.readLine()) != null) //returns a Boolean value  
             {
                 String[] Info = line.split(splitBy);
-                MotivationalSong msg = new MotivationalSong();
-                msg.setSongName(Info[1]);
+                SoothingMusic msg = new SoothingMusic();
+                msg.setMusicName(Info[1]);
                 msg.setComposer(Info[2]);
                 msg.setDuration(Info[3]);
                 MSG.add(msg);
@@ -140,9 +140,9 @@ public class RManager {
         return temp;
     }
     public ArrayList getSearchedSong(String title){
-        ArrayList<MotivationalSong> temp = new ArrayList<>();
+        ArrayList<SoothingMusic> temp = new ArrayList<>();
         for (int i = 0; i < MSG.size(); i++) {
-            if ((MSG.get(i).getSongName().toLowerCase().contains(title.toLowerCase()))||(MSG.get(i).getComposer().toLowerCase().contains(title.toLowerCase()))) {
+            if ((MSG.get(i).getMusicName().toLowerCase().contains(title.toLowerCase()))||(MSG.get(i).getComposer().toLowerCase().contains(title.toLowerCase()))) {
                 temp.add(MSG.get(i));
             }
         }
@@ -157,9 +157,9 @@ public class RManager {
         }
         return null;
     }
-    public MotivationalSong getSelectedSong(String title) {
+    public SoothingMusic getSelectedSong(String title) {
         for (int i = 0; i < MSG.size(); i++) {
-            if (MSG.get(i).getSongName().equals(title)) {
+            if (MSG.get(i).getMusicName().equals(title)) {
                 return MSG.get(i);
             }
         }

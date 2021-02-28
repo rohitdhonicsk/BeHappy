@@ -38,7 +38,7 @@ public class BehappyManager {
         DM.PU = new PreferencesUI(DM);
         DM.QG = new QuoteGUI(DM);
         DM.ST = new SearchTherapistUI(DM);
-        DM.SG = new SongGUI(DM);
+        DM.SG = new MusicGUI(DM);
         DM.S1 = new Story1GUI(DM);
         DM.S2 = new Story2GUI(DM);
         DM.L = new login(DM);

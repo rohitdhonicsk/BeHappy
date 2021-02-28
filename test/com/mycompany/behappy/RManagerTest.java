@@ -160,8 +160,8 @@ public class RManagerTest {
         System.out.println("getSelectedSong");
         String title = "";
         RManager instance = new RManager();
-        MotivationalSong expResult = null;
-        MotivationalSong result = instance.getSelectedSong(title);
+        SoothingMusic expResult = null;
+        SoothingMusic result = instance.getSelectedSong(title);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

@@ -11,24 +11,24 @@ package com.mycompany.behappy;
  *
  * @author Saura
  */
-public class MotivationalSong{
-    private String songName;
+public class SoothingMusic{
+    private String musicName;
     private String composer;
     private String duration;
 
-    public MotivationalSong() {
-        this.songName = null;
+    public SoothingMusic() {
+        this.musicName = null;
         this.composer = null;
         this.duration = null;
         
     }
 
-    public String getSongName() {
-        return songName;
+    public String getMusicName() {
+        return musicName;
     }
 
-    public void setSongName(String songName) {
-        this.songName = songName;
+    public void setMusicName(String songName) {
+        this.musicName = songName;
     }
 
     public String getComposer() {

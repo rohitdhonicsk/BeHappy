@@ -21,11 +21,12 @@ public class Story1GUI extends javax.swing.JFrame {
     private JTextArea[] jt;
 //    private RManager RM;
     DisplayManager mgr;
+
     /**
      * Creates new form Story1GUI
      */
     public Story1GUI(DisplayManager mgr) {
-        this.mgr=mgr;
+        this.mgr = mgr;
         initComponents();
         this.setLocationRelativeTo(null);
 //        RM = new RManager();
@@ -33,6 +34,7 @@ public class Story1GUI extends javax.swing.JFrame {
         MS = mgr.BHM.RMgr.getListOfStories();
         this.displayListOFStories();
     }
+
     public void displayListOFStories() {
         int i = 0;
         int j = 0;
@@ -284,7 +286,7 @@ public class Story1GUI extends javax.swing.JFrame {
         if (!title.equals("")) {
 
             this.jPanel3.removeAll();
-            MS = mgr.BHM.RMgr.getSearchedStory(title);
+            MS = mgr.BHM.RMgr.getSearchedStory(title.trim());
             if (MS.isEmpty()) {
                 jLabel1.setText("OOPSIE,Nothing matched with: " + title);
             } else {
@@ -315,14 +317,30 @@ public class Story1GUI extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        this.jTextField1.setText("");
+        jLabel1.setText("Stories of Recovery");
+        this.jPanel3.removeAll();
+        String title = this.jTextField1.getText();
+        MS = mgr.BHM.RMgr.getListOfStories();
+        this.jPanel3.repaint();
+        this.jPanel3.revalidate();
+        this.displayListOFStories();
         mgr.showMMU();
- 
+
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
+        this.jTextField1.setText("");
+        jLabel1.setText("Stories of Recovery");
+        this.jPanel3.removeAll();
+        String title = this.jTextField1.getText();
+        MS = mgr.BHM.RMgr.getListOfStories();
+        this.jPanel3.repaint();
+        this.jPanel3.revalidate();
+        this.displayListOFStories();
         mgr.showRM();
-     
+
     }//GEN-LAST:event_jLabel10MouseClicked
     public void mouseClick(java.awt.event.MouseEvent e) {
         MotivationalStory ms;
@@ -330,7 +348,7 @@ public class Story1GUI extends javax.swing.JFrame {
             if (e.getSource() == jt[i]) {
                 ms = mgr.BHM.RMgr.getSelectedStory(jt[i].getText());
                 mgr.showS2(ms);
-             
+
                 this.dispose();
             }
         }
@@ -366,7 +384,7 @@ public class Story1GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              
+
             }
         });
     }

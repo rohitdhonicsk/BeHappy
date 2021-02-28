@@ -27,12 +27,15 @@ public class TakeTestManager
     public void init()
     {
         
-        Stress();
-        Anxiety();
-        Depression();
+        Boolean s = Stress();
+        Boolean a = Anxiety();
+        Boolean d = Depression();
+
+        if(s== true && a==true && d==true)
+           System.out.println("All files read");
         
     }
-    public void Stress()
+    public Boolean Stress()
     {
         String line = "";  
         String splitBy = ",";
@@ -56,9 +59,10 @@ public class TakeTestManager
         {  
             e.printStackTrace();  
         }
+        return true;
     }
 
-    void Anxiety()
+    public Boolean Anxiety()
     {
         String line = "";  
         String splitBy = ",";
@@ -81,8 +85,9 @@ public class TakeTestManager
         {  
             e.printStackTrace();  
         }
+        return true;
     }
-    void Depression()
+    public Boolean Depression()
     {
         String line = "";  
         String splitBy = ",";
@@ -105,6 +110,7 @@ public class TakeTestManager
         {  
             e.printStackTrace();  
         }
+        return true;
     }
     public String getStress(int i)
     {
@@ -306,8 +312,12 @@ public class TakeTestManager
     {
         TakeTestManager test = new TakeTestManager();
         
-        test.StressScore();
-        
+        assert(test.Stress()==true);
+        assert(test.Anxiety()==true);
+        assert(test.Depression()==true);
+        assert(StressQuestions.length==6);
+        assert(AnxietyQuestions.length==6);
+        assert(DepressionQuestions.length==6);
         
     }
 }*/

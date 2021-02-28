@@ -854,7 +854,7 @@ public class TakeTestUI extends javax.swing.JFrame {
 
         feedback = opn+opA+op;*/
 
-                this.jLabel3.setVisible(false);
+                this.jLabel3.setText("Don't worry about the results, we are always by you to help you out");
                 this.jLabel4.setVisible(false);
                 this.jLabel5.setVisible(false);
                 this.jLabel6.setVisible(false);

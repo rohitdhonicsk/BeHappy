@@ -25,7 +25,7 @@ public class Story2GUI extends javax.swing.JFrame {
     public Story2GUI(DisplayManager mgr) {
         this.mgr=mgr;
         initComponents();
-        
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(8);
         this.setLocationRelativeTo(null);
         
         

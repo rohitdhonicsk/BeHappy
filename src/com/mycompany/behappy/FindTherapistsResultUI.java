@@ -352,6 +352,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
             ft.setText(therapists.get(count).getFees());
             at.setText(therapists.get(count).getAddress());
             urlt.setText(therapists.get(count).getWebsite());
+            urlt.setCaretPosition(0);
 //            jButton2.setContentAreaFilled(true);
             jButton2.setBackground(new Color(40,153,160));
             jButton2.setForeground(Color.WHITE);
@@ -384,6 +385,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
             ft.setText(therapists.get(count).getFees());
             at.setText(therapists.get(count).getAddress());
             urlt.setText(therapists.get(count).getWebsite());
+            urlt.setCaretPosition(0);
 //            jButton1.setContentAreaFilled(true);
             jButton1.setBackground(new Color(40,153,160));
             jButton1.setForeground(Color.WHITE);

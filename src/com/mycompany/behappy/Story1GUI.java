@@ -28,7 +28,9 @@ public class Story1GUI extends javax.swing.JFrame {
     public Story1GUI(DisplayManager mgr) {
         this.mgr = mgr;
         initComponents();
+        this.setSize(new Dimension(900, 650));
         this.setLocationRelativeTo(null);
+        jScrollPane2.getVerticalScrollBar().setUnitIncrement(16);
 //        RM = new RManager();
         MS = new ArrayList<>();
         MS = mgr.BHM.RMgr.getListOfStories();
@@ -189,7 +191,7 @@ public class Story1GUI extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(147, 205, 186));
@@ -270,7 +272,7 @@ public class Story1GUI extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jScrollPane2))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         pack();

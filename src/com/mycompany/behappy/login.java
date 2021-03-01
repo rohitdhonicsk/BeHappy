@@ -3,6 +3,7 @@ package com.mycompany.behappy;
 
 import com.mycompany.behappy.LoginManager;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -25,6 +26,7 @@ public class login extends javax.swing.JFrame {
     public login(DisplayManager mgr) {
         this.mgr=mgr;
         initComponents();
+        this.setSize(new Dimension(900, 650));
         this.setLocationRelativeTo(null);
 //        jLabel1.setIcon(new ImageIcon("src/utils/logo_full.png"));
 //        jLabel4.setIcon(new ImageIcon("src/utils/icons8_user_20px_1.png"));

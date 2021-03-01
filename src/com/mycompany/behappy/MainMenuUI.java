@@ -6,6 +6,8 @@
  */
 package com.mycompany.behappy;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author soaka
@@ -19,6 +21,7 @@ public class MainMenuUI extends javax.swing.JFrame {
     public MainMenuUI(DisplayManager mgr) {
         this.mgr=mgr;
         initComponents();
+        this.setSize(new Dimension(900, 650));
         this.setLocationRelativeTo(null);
     }
 
@@ -43,6 +46,7 @@ public class MainMenuUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 600));
+        setSize(new java.awt.Dimension(900, 650));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(40, 153, 160));
@@ -99,11 +103,11 @@ public class MainMenuUI extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 250, 600);
+        jPanel1.setBounds(0, 0, 250, 650);
 
         jPanel2.setBackground(new java.awt.Color(147, 205, 186));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -162,17 +166,17 @@ public class MainMenuUI extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(101, 101, 101)
+                .addContainerGap(117, Short.MAX_VALUE)
                 .addComponent(tt)
                 .addGap(21, 21, 21)
                 .addComponent(st)
                 .addGap(18, 18, 18)
                 .addComponent(rc, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(250, 0, 650, 600);
+        jPanel2.setBounds(250, 0, 650, 650);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

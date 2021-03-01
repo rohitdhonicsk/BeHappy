@@ -6,6 +6,8 @@
 package com.mycompany.behappy;
 
 import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Point;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -29,9 +31,10 @@ public class TakeTestUI extends javax.swing.JFrame {
         this.mgr = mgr;
 
         initComponents();
+//        this.setSize(new Dimension(900, 650));
         this.setLocationRelativeTo(null);
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
-       
+        jScrollPane1.getHorizontalScrollBar().setUnitIncrement(8);
         ent = new TakeTestEntity();
         stressScreen();
         //this.jPanel6.setVisible(true);
@@ -559,7 +562,7 @@ public class TakeTestUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -590,6 +593,7 @@ public class TakeTestUI extends javax.swing.JFrame {
 
     private void take_testMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_take_testMouseClicked
         // TODO add your handling code here:
+        jScrollPane1.getViewport().setViewPosition(new Point(0,0));
         String label = this.take_test.getText();
         /*if(label.equalsIgnoreCase("Take Test"))
         {

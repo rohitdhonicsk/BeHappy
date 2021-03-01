@@ -7,6 +7,7 @@ package com.mycompany.behappy;
 
 import AppPackage.AnimationClass;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -26,7 +27,7 @@ public class StartUI extends javax.swing.JFrame {
     public StartUI(DisplayManager mgr) {
        this.mgr=mgr;
         initComponents();
-       
+        this.setSize(new Dimension(900, 650));
         this.setLocationRelativeTo(null);
         
         
@@ -121,11 +122,11 @@ public class StartUI extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(w, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(d, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
+                .addComponent(d, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 0, 900, 600);
+        jPanel2.setBounds(0, 0, 900, 650);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/administrative_tools_100px.png"))); // NOI18N
@@ -139,7 +140,7 @@ public class StartUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 100, 118);
+        jLabel1.setBounds(0, 0, 100, 117);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/next_100px.png"))); // NOI18N
@@ -153,11 +154,11 @@ public class StartUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 100, 118);
+        jLabel3.setBounds(0, 0, 100, 117);
 
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 34, 14);
+        jLabel2.setBounds(0, 0, 33, 13);
 
         jScrollPane1.setBackground(new java.awt.Color(176, 221, 194));
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daily Quote", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Leelawadee UI", 0, 36), new java.awt.Color(0, 88, 81))); // NOI18N

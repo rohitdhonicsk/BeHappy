@@ -116,7 +116,7 @@ public class RManager {
         return MQ;
     }
 
-    public ArrayList getListOfSongs() {
+    public ArrayList getListOfMusic() {
         return MSG;
     }
 
@@ -139,7 +139,7 @@ public class RManager {
         }
         return temp;
     }
-    public ArrayList getSearchedSong(String title){
+    public ArrayList getSearchedMusic(String title){
         ArrayList<SoothingMusic> temp = new ArrayList<>();
         for (int i = 0; i < MSG.size(); i++) {
             if ((MSG.get(i).getMusicName().toLowerCase().contains(title.toLowerCase()))||(MSG.get(i).getComposer().toLowerCase().contains(title.toLowerCase()))) {
@@ -157,7 +157,7 @@ public class RManager {
         }
         return null;
     }
-    public SoothingMusic getSelectedSong(String title) {
+    public SoothingMusic getSelectedMusic(String title) {
         for (int i = 0; i < MSG.size(); i++) {
             if (MSG.get(i).getMusicName().equals(title)) {
                 return MSG.get(i);
@@ -166,7 +166,7 @@ public class RManager {
         return null;
     }
 
-    public void startPlayingSong(String title) {
+    public void startPlayingMusic(String title) {
         fileChooser = new JFileChooser();
         fileChooser.setSelectedFile(new File( title + ".mp3"));
         myFile = fileChooser.getSelectedFile();
@@ -182,7 +182,7 @@ public class RManager {
         playThread.start();
     }
 
-    public void pauseSong() {
+    public void pauseMusic() {
         if (player != null) {
             try {
                 pause = fileInputStream.available();
@@ -193,13 +193,14 @@ public class RManager {
         }
     }
 
-    public void resumeSong() {
+    public void resumeMusic() {
         if (player != null) {
+            resumeThread = new Thread(runnableResume);
             resumeThread.start();
         }
     }
 
-    public void stopSong() {
+    public void stopMusic() {
         if (player != null) {
             player.close();
         }

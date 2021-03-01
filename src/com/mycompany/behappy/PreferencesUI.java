@@ -63,15 +63,15 @@ public class PreferencesUI extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(147, 204, 185));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.setForeground(new java.awt.Color(0, 17, 51));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 17, 51));
         jLabel2.setText("Gender");
 
         buttonGroup1.add(grb1);
-        grb1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        grb1.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         grb1.setForeground(new java.awt.Color(0, 17, 51));
         grb1.setText("Male");
         grb1.setToolTipText("Set Gender as Male");
@@ -83,7 +83,7 @@ public class PreferencesUI extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(grb2);
-        grb2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        grb2.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         grb2.setForeground(new java.awt.Color(0, 17, 51));
         grb2.setText("Female");
         grb2.setToolTipText("Set Gender as Female");
@@ -95,7 +95,7 @@ public class PreferencesUI extends javax.swing.JFrame {
         });
 
         buttonGroup2.add(srb2);
-        srb2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        srb2.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         srb2.setForeground(new java.awt.Color(0, 17, 51));
         srb2.setText("Offline");
         srb2.setToolTipText("Meet Therapist Personally");
@@ -107,7 +107,7 @@ public class PreferencesUI extends javax.swing.JFrame {
         });
 
         buttonGroup2.add(srb1);
-        srb1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        srb1.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         srb1.setForeground(new java.awt.Color(0, 17, 51));
         srb1.setText("Online");
         srb1.setToolTipText("Need Online Session");
@@ -118,11 +118,11 @@ public class PreferencesUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 17, 51));
         jLabel3.setText("Session");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 17, 51));
         jLabel5.setText("Budget");
 
@@ -138,11 +138,11 @@ public class PreferencesUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 17, 51));
         jLabel6.setText("City");
 
-        jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jComboBox1.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(0, 17, 51));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select City", "kolkata", "Mumbai", "Delhi", "Chennai", "Hyderabad", "Bengaluru", "Pune", "Ranchi" }));
         jComboBox1.setToolTipText("Select Preferred City");
@@ -153,12 +153,15 @@ public class PreferencesUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 17, 51));
+        jButton1.setBackground(new java.awt.Color(40, 153, 160));
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Show");
         jButton1.setToolTipText("Show Recommended Therapists");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.setOpaque(true);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -170,7 +173,7 @@ public class PreferencesUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(175, Short.MAX_VALUE)
+                .addContainerGap(173, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,23 +227,23 @@ public class PreferencesUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(198, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(260, 0, 640, 650);
 
         jPanel2.setBackground(new java.awt.Color(40, 153, 160));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 6, new java.awt.Color(255, 255, 255)));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
         jLabel4.setBackground(new java.awt.Color(133, 200, 173));
-        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Preferences");
@@ -265,21 +268,17 @@ public class PreferencesUI extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(154, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,11 +287,11 @@ public class PreferencesUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel9))
-                .addGap(70, 70, 70)
+                .addGap(135, 135, 135)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);

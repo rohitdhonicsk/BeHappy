@@ -51,6 +51,7 @@ public class StartUI extends javax.swing.JFrame {
         
         jPanel2.add(jScrollPane1);
         jTextArea1.setText(mgr.BHM.SMgr.generateRandomString());
+        jTextArea1.setFont(new Font("Gabriola", Font.BOLD, 24));
         jPanel2.add(jLabel1);
         jPanel2.add(jLabel3);
         jLabel1.setBounds(600, 300, 100, 120);
@@ -89,10 +90,12 @@ public class StartUI extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(900, 590));
 
         w.setBackground(new java.awt.Color(40, 153, 160));
-        w.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        w.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        w.setForeground(new java.awt.Color(255, 255, 255));
         w.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         w.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
         w.setText("BeHappy");
+        w.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 6, 0, new java.awt.Color(255, 255, 255)));
         w.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         w.setOpaque(true);
         w.setPreferredSize(new java.awt.Dimension(200, 150));
@@ -100,6 +103,7 @@ public class StartUI extends javax.swing.JFrame {
 
         d.setBackground(new java.awt.Color(147, 205, 186));
         d.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        d.setForeground(new java.awt.Color(0, 88, 81));
         d.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         d.setText("WELCOME");
         d.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -116,8 +120,8 @@ public class StartUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(w, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(d, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(d, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
@@ -135,7 +139,7 @@ public class StartUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 100, 117);
+        jLabel1.setBounds(0, 0, 100, 118);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/next_100px.png"))); // NOI18N
@@ -149,17 +153,18 @@ public class StartUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 100, 117);
+        jLabel3.setBounds(0, 0, 100, 118);
 
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 33, 13);
+        jLabel2.setBounds(0, 0, 34, 14);
 
         jScrollPane1.setBackground(new java.awt.Color(176, 221, 194));
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Daily Quote", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Leelawadee UI", 0, 36), new java.awt.Color(0, 88, 81))); // NOI18N
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setToolTipText("");
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jScrollPane1.setOpaque(false);
 
         jTextArea1.setEditable(false);

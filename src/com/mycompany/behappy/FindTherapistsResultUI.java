@@ -77,13 +77,14 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(40, 153, 160));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 6, new java.awt.Color(255, 255, 255)));
         jPanel1.setPreferredSize(new java.awt.Dimension(260, 650));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
         jLabel8.setBackground(new java.awt.Color(176, 221, 194));
-        jLabel8.setFont(new java.awt.Font("Leelawadee UI", 0, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Results");
@@ -110,9 +111,6 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -120,7 +118,8 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,39 +128,40 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
-                .addGap(210, 210, 210))
+                .addGap(225, 225, 225))
         );
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 260, 650);
 
         jPanel2.setBackground(new java.awt.Color(147, 205, 186));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 17, 51));
         jLabel4.setText("Name:");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 17, 51));
         jLabel5.setText("Contact No:");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 17, 51));
         jLabel6.setText("Experience:");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 17, 51));
         jLabel1.setText("Fees:");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 17, 51));
         jLabel2.setText("Address:");
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 17, 51));
         jLabel3.setText("URL:");
 
@@ -179,11 +179,12 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
         ft.setForeground(new java.awt.Color(0, 17, 51));
 
         jButton1.setBackground(new java.awt.Color(40, 153, 160));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Next");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
         jButton1.setOpaque(true);
         jButton1.setPreferredSize(new java.awt.Dimension(26, 15));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,11 +194,12 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(40, 153, 160));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Previous");
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
+        jButton2.setFocusPainted(false);
         jButton2.setOpaque(true);
         jButton2.setPreferredSize(new java.awt.Dimension(26, 15));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -256,7 +258,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(27, 40, Short.MAX_VALUE)
+                                .addGap(27, 35, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nt, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,7 +287,7 @@ public class FindTherapistsResultUI extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(nt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))

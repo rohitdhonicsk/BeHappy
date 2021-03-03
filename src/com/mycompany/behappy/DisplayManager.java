@@ -25,7 +25,7 @@ public class DisplayManager {
     MusicGUI SG;
     Story1GUI S1;
     Story2GUI S2;
-    login L;
+    loginUI L;
     Refreshment_Menu RM;
     TakeTestUI TTU;
     BehappyManager BHM;

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.behappy;
 
 import java.awt.Component;
@@ -913,20 +909,7 @@ public class TakeTestUI extends javax.swing.JFrame {
         if (label.equalsIgnoreCase("Give preferences")) {
                 mgr.showPU();
          }
-        /* else
-        {
-             this.jLabel1.setText("Stress Test");
-            this.jPanel6.setVisible(true);
-            take_test.setText("Submit Stress Test");
-            
-            this.jTextArea2.setText("Answer the questions below");
-            this.jLabel3.setText("In last week "+mng.getStress(0));
-            this.jLabel4.setText("In last week "+mng.getStress(1));
-            this.jLabel5.setText("In last week "+mng.getStress(2));
-            this.jLabel6.setText("In last week "+mng.getStress(3));
-            this.jLabel7.setText("In last week "+mng.getStress(4));
-            this.jLabel8.setText("In last week "+mng.getStress(5));
-        }*/
+
     }//GEN-LAST:event_take_testMouseClicked
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -943,40 +926,6 @@ public class TakeTestUI extends javax.swing.JFrame {
         mgr.showMMU();
     }//GEN-LAST:event_jLabel11MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TakeTestUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TakeTestUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TakeTestUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TakeTestUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-//                new TakeTestUI().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;

@@ -11,20 +11,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.table.DefaultTableModel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 /**
  *
  * @author ROHIT KUMAR GUPTA
  */
 public class ManageTherapistMainUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SearchTherapistUI
-     */
+  
     private DisplayManager mgr;
     public ManageTherapistMainUI(DisplayManager mgr) {
        this.mgr=mgr;
@@ -110,12 +104,6 @@ public class ManageTherapistMainUI extends javax.swing.JFrame {
                 AddTherapistMouseClicked(evt);
             }
         });
-
-        DELETELabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/RD.png"))); // NOI18N
-
-        SEARCHLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/RS.png"))); // NOI18N
-
-        ADDLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/RA.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);

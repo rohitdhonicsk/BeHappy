@@ -346,8 +346,6 @@ public class Story1GUI extends javax.swing.JFrame {
             if (e.getSource() == jt[i]) {
                 ms = mgr.BHM.RMgr.getSelectedStory(jt[i].getText());
                 mgr.showS2(ms);
-
-                this.dispose();
             }
         }
     }

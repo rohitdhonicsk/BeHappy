@@ -51,8 +51,8 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        Home = new javax.swing.JLabel();
+        Back = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         Button = new javax.swing.JButton();
@@ -90,18 +90,18 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Delete");
 
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/home.png"))); // NOI18N
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/home.png"))); // NOI18N
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                HomeMouseClicked(evt);
             }
         });
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/arrow.png"))); // NOI18N
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/arrow.png"))); // NOI18N
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
+                BackMouseClicked(evt);
             }
         });
 
@@ -118,9 +118,9 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel12)
+                        .addComponent(Back)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(39, Short.MAX_VALUE))
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -129,8 +129,8 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel11))
+                    .addComponent(Back)
+                    .addComponent(Home))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -336,7 +336,7 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
         String CityId = this.CityId.getText();
         String City = this.City.getText();
         String Contact = this.Contact.getText();
-        String Status = mgr.BHM.MMTMgr.verifyDeletingSearchData(Name, Contact, City, CityId);
+        String Status = mgr.BHM.MMTMgr.verifyDeletingSearchTherapistData(Name, Contact, City, CityId);
         if (Status.equals("success")) {
             this.ClearData();
             boolean Found = mgr.BHM.MMTMgr.searchData(CityId, Name, Contact, City);
@@ -352,7 +352,7 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
             } else {
                 if (Found) {
                     mgr.BHM.MMTMgr.deleteData(CityId, Name, Contact, City);
-                    this.mgr.BHM.Mgr.storeData();
+                    this.mgr.BHM.Mgr.ReadData();
                     this.mgr.BHM.Mgr.allData();
                     this.mgr.ST.init();
                     JOptionPane.showMessageDialog(this, "Successfully Deleted Therapist",
@@ -369,16 +369,16 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ButtonMouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         // TODO add your handling code here:
         mgr.showSU();
        
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_HomeMouseClicked
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         // TODO add your handling code here:
        mgr.showMTMU();
-    }//GEN-LAST:event_jLabel12MouseClicked
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -395,16 +395,16 @@ public class ManageTherapistDSUUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Back;
     private javax.swing.JButton Button;
     private javax.swing.JTextField City;
     private javax.swing.JTextField CityId;
     private javax.swing.JTextField Contact;
     private javax.swing.JTextField Experience;
+    private javax.swing.JLabel Home;
     private javax.swing.JTextArea Name;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;

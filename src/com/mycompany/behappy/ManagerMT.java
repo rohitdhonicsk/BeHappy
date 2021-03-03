@@ -1,11 +1,5 @@
 package com.mycompany.behappy;
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -24,7 +18,7 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *Manage Therapist manager:::Add Therapist,Delete Therapist and Search Therapist
  * @author ROHIT KUMAR GUPTA
  */
 public class ManagerMT {
@@ -65,7 +59,7 @@ public class ManagerMT {
 
     }
 
-    public String verifyDeletingSearchData(String Name, String Contact, String City, String CityId) {
+    public String verifyDeletingSearchTherapistData(String Name, String Contact, String City, String CityId) {
         if (CityId.equals("") && City.equals("")) {
             if (Contact.equals("") && Name.equals((""))) {
                 return "No Data Enter,Please Enter Data For Any Choice";
@@ -113,7 +107,7 @@ public class ManagerMT {
 
     }
 
-    public String VerifyData(String Name, String City, String Contact, String Fees, String Experience, String WebLink, String Address) {
+    public String VerifyNewTherapistData(String Name, String City, String Contact, String Fees, String Experience, String WebLink, String Address) {
         if (Name.equals("")) {
 
             return "Name Is Compulsory";
@@ -259,7 +253,7 @@ public class ManagerMT {
                 reader.close();
                 File InputFile = new File("TherapistDataset.csv");
                 InputFile.delete();
-                
+
                 boolean successful = tempFile.renameTo(new File("TherapistDataset.csv"));
                 System.out.println("\n00000ddd" + successful);
             } else {
@@ -290,8 +284,7 @@ public class ManagerMT {
 
             while ((currentLine = reader.readLine()) != null) {
                 String[] Info = currentLine.split(",");
-                // trim newline when comparing with lineToRemove
-//                String trimmedLine = currentLine.trim();
+
                 int id = Integer.parseInt(Info[2]);
                 String Theraname = Info[3];
                 String CityName = Info[1];
@@ -315,12 +308,12 @@ public class ManagerMT {
             writer.close();
 
             reader.close();
-            
+
             if (Deleted) {
                 File InputFile = new File("TherapistDataset.csv");
-                
+
                 InputFile.delete();
-                
+
                 boolean successful = tempFile.renameTo(new File("TherapistDataset.csv"));
                 tempFile.delete();
                 System.out.println(successful);
@@ -333,10 +326,6 @@ public class ManagerMT {
             System.out.print(e.getMessage());
         }
 
-    }
-
-    public static void main(String[] args) {
-//        ManagerMT Obj = new ManagerMT();
     }
 
 }

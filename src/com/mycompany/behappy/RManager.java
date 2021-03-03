@@ -13,7 +13,7 @@ import javazoom.jl.player.Player;
  */
 /**
  *
- * @author Saura
+ * @author SAURABH KUMAR
  */
 public class RManager {
 

@@ -4,6 +4,11 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+/**
+ *
+ * @author AKASH BARANWAL
+ */
 public class LoginManager{
 public  HashMap importDatabase(){
 HashMap<String, String> data=new HashMap<>();
@@ -24,26 +29,6 @@ e.printStackTrace();
 return data;
 }
 
-//public String verifyDetails(Admin a){
-//    HashMap d=this.importDatabase();
-// if(d.containsKey(a.getUsername())){
-//     if(d.get(a.getUsername()).equals(a.getPwd())){
-//        System.out.println("correct password");
-////         JOptionPane.showMessageDialog(this,"Login successful");
-//         return "Login Successful";
-//     }
-//     else{
-//         System.out.println("wrong password");
-////         JOptionPane.showMessageDialog(this,"Please enter correct password");
-//         return "Please enter correct password";
-//     }
-//
-// }
-// else{
-//    System.out.println("no user found");
-//    return "No user found";
-// }
-//}
 public boolean verifyPassword(Admin a){
     HashMap d=this.importDatabase();
     if(d.containsKey(a.getUsername())){
@@ -63,10 +48,10 @@ public boolean verifyUsername(Admin a){
 }
 
 
-public static void main(String[] args) {
-     
-    LoginManager l=new LoginManager();
+//public static void main(String[] args) {
+//     
+//    LoginManager l=new LoginManager();
 //    l.importDatabase()
 //    new login().setVisible(true);
-}
+//}
 }

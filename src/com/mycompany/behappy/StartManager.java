@@ -14,7 +14,7 @@ import java.util.Random;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class StartManager {
    

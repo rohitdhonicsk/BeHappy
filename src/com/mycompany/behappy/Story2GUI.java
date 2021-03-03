@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
  */
 /**
  *
- * @author Saura
+ * @author SAURABH KUMAR
  */
 public class Story2GUI extends javax.swing.JFrame {
     
@@ -225,6 +225,7 @@ public class Story2GUI extends javax.swing.JFrame {
         constraints.weightx = 1;
         constraints.weighty = 1;
         jPanel3.add(field, constraints);
+        field.setCaretPosition(0);
     }
 
     public static void main(String args[]) {

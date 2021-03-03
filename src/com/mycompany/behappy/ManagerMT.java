@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ROHIT
+ * @author ROHIT KUMAR GUPTA
  */
 public class ManagerMT {
 

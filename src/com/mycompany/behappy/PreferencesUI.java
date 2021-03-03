@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class PreferencesUI extends javax.swing.JFrame {
 

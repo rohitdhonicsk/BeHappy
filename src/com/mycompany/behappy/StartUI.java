@@ -16,7 +16,7 @@ import javax.swing.JTextArea;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class StartUI extends javax.swing.JFrame {
 

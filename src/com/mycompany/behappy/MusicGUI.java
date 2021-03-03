@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
  */
 /**
  *
- * @author Saura
+ * @author SAURABH KUMAR
  */
 public class MusicGUI extends javax.swing.JFrame {
 

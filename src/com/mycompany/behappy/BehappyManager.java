@@ -7,7 +7,7 @@ package com.mycompany.behappy;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class BehappyManager {
     StartManager SMgr;

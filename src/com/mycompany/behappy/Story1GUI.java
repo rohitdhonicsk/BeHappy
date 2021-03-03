@@ -13,7 +13,7 @@ import java.io.*;
  */
 /**
  *
- * @author Saura
+ * @author SAURABH KUMAR
  */
 public class Story1GUI extends javax.swing.JFrame {
 

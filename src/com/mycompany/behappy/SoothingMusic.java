@@ -9,7 +9,7 @@ package com.mycompany.behappy;
 
 /**
  *
- * @author Saura
+ * @author SAURABH KUMAR
  */
 public class SoothingMusic{
     private String musicName;

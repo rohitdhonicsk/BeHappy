@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  *
- * @author Rohit Kumar Gupta //
+ * @author ROHIT KUMAR GUPTA //
  */
 class SortCompare implements Comparator<Therapist> {
 

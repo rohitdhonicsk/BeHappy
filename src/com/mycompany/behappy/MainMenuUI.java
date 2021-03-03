@@ -10,7 +10,7 @@ import java.awt.Dimension;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class MainMenuUI extends javax.swing.JFrame {
 

@@ -5,7 +5,12 @@ package com.mycompany.behappy;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ *
+ * @author AKASH BARANWAL & ROHIT KUMAR GUPTA
+ */
 
+    
 public class Therapist {
 
     private int id;

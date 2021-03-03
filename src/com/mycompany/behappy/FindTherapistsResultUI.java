@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class FindTherapistsResultUI extends javax.swing.JFrame {
 

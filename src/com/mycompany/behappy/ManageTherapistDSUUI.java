@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 /**
  *
- * @author ROHIT
+ * @author ROHIT KUMAR GUPTA
  */
 public class ManageTherapistDSUUI extends javax.swing.JFrame {
 

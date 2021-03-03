@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
  */
 /**
  *
- * @author Saura
+ * @author SAURABH KUMAR
  */
 public class QuoteGUI extends javax.swing.JFrame {
 
@@ -30,6 +30,7 @@ public class QuoteGUI extends javax.swing.JFrame {
         this.mgr = mgr;
         initComponents();
         this.setLocationRelativeTo(null);
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(8);
 //        mgr.RMgr = new RManager();
         MQ = new ArrayList<>();
         MQ = mgr.BHM.RMgr.getListOfQuotes();

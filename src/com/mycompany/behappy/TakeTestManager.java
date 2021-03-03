@@ -4,6 +4,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
+
+/**
+ *
+ * @author AANISHA BHATTACHARYA
+ */
+
+
 public class TakeTestManager 
 {
     private String StressQuestions[][];

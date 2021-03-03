@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 /**
  *
- * @author ROHIT
+ * @author ROHIT KUMAR GUPTA
  */
 public class SearchTherapistUI extends javax.swing.JFrame {
 

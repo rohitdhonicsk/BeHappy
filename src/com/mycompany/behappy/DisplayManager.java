@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ROHIT
+ * @author ROHIT KUMAR GUPTA & AKASH BARANWAL
  */
 public class DisplayManager {
 
@@ -31,7 +31,7 @@ public class DisplayManager {
     BehappyManager BHM;
     
     public DisplayManager() {
-
+        
     }
 
     public void hideALL() {

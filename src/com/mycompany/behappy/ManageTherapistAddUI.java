@@ -522,8 +522,14 @@ public class ManageTherapistAddUI extends javax.swing.JFrame {
         
             this.DefaultData();
             this.getData();
-            
+            boolean Found = this.mgr.BHM.MMTMgr.searchData("-1", UserData.getName(), UserData.getContactNumber(), UserData.getCity());
+            if(!Found){
             this.mgr.BHM.MMTMgr.appendData(UserData);
+             Status="Successfully Added Therapist";
+            }
+            else{
+                Status="Already Exist Therapist";
+            }
             this.mgr.BHM.Mgr.ReadData();
             this.mgr.BHM.Mgr.allData();
             this.mgr.ST.init();

@@ -1,11 +1,12 @@
 package com.mycompany.behappy;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+/**
+ *
+ * @author AKASH BARANWAL & ROHIT KUMAR GUPTA
  */
 
+    
 public class Therapist {
 
     private int id;
@@ -112,15 +113,15 @@ public class Therapist {
         this.website = website;
     }
     
-    public static void main(String[] args) {
-        Therapist Data = new Therapist();
-        Data.setAddress("Nirsha,Dhanbad");
-        String[] S={"Monday","","Wed"};
-        Data.setAvailDay(S);
-        Data.setCity("Dhanbad");
-        Data.setWebsite("ddd");
-        System.out.println(Data.getId()+" "+Data.getName()+" "+Data.getWebsite());
-        Data.printAvailDay();
-    }
+//    public static void main(String[] args) {
+//        Therapist Data = new Therapist();
+//        Data.setAddress("Nirsha,Dhanbad");
+//        String[] S={"Monday","","Wed"};
+//        Data.setAvailDay(S);
+//        Data.setCity("Dhanbad");
+//        Data.setWebsite("ddd");
+//        System.out.println(Data.getId()+" "+Data.getName()+" "+Data.getWebsite());
+//        Data.printAvailDay();
+//    }
 
 }

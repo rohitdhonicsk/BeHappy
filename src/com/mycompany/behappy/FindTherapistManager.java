@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class FindTherapistManager {
 

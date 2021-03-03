@@ -8,7 +8,7 @@ package com.mycompany.behappy;
 
 /**
  *
- * @author Saura
+ * @author SAURABH KUMAR
  */
 public class MotivationalQuote{
     private String authorName;

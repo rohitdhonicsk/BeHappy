@@ -1,6 +1,5 @@
 package com.mycompany.behappy;
 
-
 import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -19,30 +18,30 @@ import javax.swing.table.DefaultTableModel;
  */
 /**
  *
- * @author ROHIT
+ * @author ROHIT KUMAR GUPTA
  */
 public class SearchTherapistUI extends javax.swing.JFrame {
 
     ArrayList<Therapist> Data;
-//    Manager Mng;
+//    ManagerST Mng;
     String website = "";
     int Budget;
     private DisplayManager mgr;
+
     /**
      * Creates new form SearchTherapistUI
      */
     public SearchTherapistUI(DisplayManager mgr) {
-        this.mgr=mgr;
+        this.mgr = mgr;
         initComponents();
-//        Mng = new Manager();
-        Data=new ArrayList<Therapist>();
+//        Mng = new ManagerST();
+        Data = new ArrayList<Therapist>();
         this.setLocationRelativeTo(null);
         init();
     }
 
     @SuppressWarnings("deprecation")
     public void init() {
-        this.jLabel1.setText("<html>" + "<body>\n" + "<p style='text-align:center'> Search<br> " + "Therapist\n</p>" + "</body>\n" + "</html>\n");
 
         if (Combo.getSelectedItem().toString().equalsIgnoreCase("None")) {
             Slider.disable();
@@ -52,23 +51,18 @@ public class SearchTherapistUI extends javax.swing.JFrame {
             Budget = this.Slider.getValue();
             this.feeValLabel.setText("Budget Value :: " + Integer.toString(Budget));
         }
-//        System.out.println(Data.size());
         Data = mgr.BHM.Mgr.getData();
-//        System.out.println(Data.size());
+
         this.showTable();
         this.ShowAvailDay();
 
-//        ImageIcon icon2 = new ImageIcon("src/utils/logo_full.png");
-//        this.jLabel2.setIcon(resizeIcon(icon2, jLabel2.getWidth(), jLabel2.getHeight()));
-
     }
 
-    private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
-        Image img = icon.getImage();
-        Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight, java.awt.Image.SCALE_SMOOTH);
-        return new ImageIcon(resizedImage);
-    }
-
+//    private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
+//        Image img = icon.getImage();
+//        Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight, java.awt.Image.SCALE_SMOOTH);
+//        return new ImageIcon(resizedImage);
+//    }
     public void ShowAvailDay() {
         if (Table.getSelectedRow() != -1) {
             this.jPanel2.setVisible(true);
@@ -91,19 +85,19 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     }
 
     public void showTable() {
-           DefaultTableModel model = (DefaultTableModel) Table.getModel();
-            // Delete Existing Rows
-            int rows = model.getRowCount();
-            for (int i = rows - 1; i >= 0; i--) {
-                model.removeRow(i);
-            }
-        if (Data.size()==0) {
+        DefaultTableModel model = (DefaultTableModel) Table.getModel();
+        // Delete Existing Rows
+        int rows = model.getRowCount();
+        for (int i = rows - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        if (Data.size() == 0) {
             this.feeValLabel.setText("Please Select Another City");
             this.TheraVallabel.setText("No Therapist Found");
         } else {
 //            this.feeValLabel.setText("Budget Value :: 1500");
             this.TheraVallabel.setText("Showing " + Data.size() + " Therapist");
-          
+
             // Insert New Rows As Per Data
             Object rowData[] = new Object[6];
             for (int i = 0; i < Data.size(); i++) {
@@ -129,10 +123,11 @@ public class SearchTherapistUI extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        HomeButton = new javax.swing.JLabel();
+        BackButton = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         feeValLabel = new javax.swing.JLabel();
         VisitURL = new javax.swing.JButton();
@@ -161,65 +156,69 @@ public class SearchTherapistUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(40, 153, 160));
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(176, 221, 194), 8, true));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setToolTipText("");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 6, new java.awt.Color(255, 255, 255)));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_full.png"))); // NOI18N
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/home.png"))); // NOI18N
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        HomeButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HomeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/home.png"))); // NOI18N
+        HomeButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                HomeButtonMouseClicked(evt);
             }
         });
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/arrow.png"))); // NOI18N
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/arrow.png"))); // NOI18N
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                BackButtonMouseClicked(evt);
             }
         });
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Search");
+
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 26)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Therapist");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(BackButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(HomeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9))
-                .addGap(80, 80, 80)
-                .addComponent(jLabel2)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                    .addComponent(BackButton)
+                    .addComponent(HomeButton))
+                .addGap(135, 135, 135)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(147, 205, 186));
-        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(133, 200, 173), 6, true));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         feeValLabel.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
         feeValLabel.setForeground(new java.awt.Color(0, 88, 81));
@@ -379,7 +378,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(cityLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(Combo, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(12, 12, 12)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,7 +387,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
                         .addComponent(feeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(Slider, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)))
+                        .addComponent(Slider, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -400,7 +399,6 @@ public class SearchTherapistUI extends javax.swing.JFrame {
         jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 3), " ListOfTherapist  ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(153, 255, 153))); // NOI18N
         jScrollPane3.setForeground(new java.awt.Color(204, 255, 204));
 
-        Table.setAutoCreateRowSorter(true);
         Table.setBackground(new java.awt.Color(204, 170, 145));
         Table.setForeground(new java.awt.Color(0, 0, 51));
         Table.setModel(new javax.swing.table.DefaultTableModel(
@@ -467,7 +465,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SortExp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SortExp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
                     .addComponent(SortFees, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SortName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -497,7 +495,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(ClickHereLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ClickHereLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 6, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -505,9 +503,9 @@ public class SearchTherapistUI extends javax.swing.JFrame {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addGap(0, 16, Short.MAX_VALUE)
+                                                .addGap(0, 31, Short.MAX_VALUE)
                                                 .addComponent(VisitURL, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(TheraVallabel, javax.swing.GroupLayout.PREFERRED_SIZE, 167, Short.MAX_VALUE))
+                                            .addComponent(TheraVallabel, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))
                                         .addGap(27, 27, 27))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(feeValLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -539,7 +537,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
                                 .addGap(57, 57, 57)
                                 .addComponent(ClickHereLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)))
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -549,7 +547,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -580,21 +578,24 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     }//GEN-LAST:event_VisitURLMouseEntered
 
     private void VisitURLMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VisitURLMouseExited
-       VisitURL.setBackground(new Color(255,102,102));
-        VisitURL.setForeground(new Color(51,0,51));
+        VisitURL.setBackground(new Color(255, 102, 102));
+        VisitURL.setForeground(new Color(51, 0, 51));
     }//GEN-LAST:event_VisitURLMouseExited
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+    private void HomeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeButtonMouseClicked
         // TODO add your handling code here:
-       mgr.showMMU();
-       Combo.setSelectedIndex(0);
-    }//GEN-LAST:event_jLabel9MouseClicked
+        mgr.showMMU();
+        Combo.setSelectedIndex(0);
+        init();
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_HomeButtonMouseClicked
+
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         // TODO add your handling code here:
-      mgr.showMMU();
-      Combo.setSelectedIndex(0);
-    }//GEN-LAST:event_jLabel10MouseClicked
+        mgr.showMMU();
+        Combo.setSelectedIndex(0);
+        init();
+    }//GEN-LAST:event_BackButtonMouseClicked
 
     private void ComboItemStateChanged(java.awt.event.ItemEvent evt) {
         if (!Combo.getSelectedItem().toString().equalsIgnoreCase("None")) {
@@ -614,11 +615,11 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     private void SliderStateChanged(javax.swing.event.ChangeEvent evt) {
 
         mgr.BHM.Mgr.filteredData(Combo.getSelectedItem().toString(), Slider.getValue());
-        try{
-        String SortSelected=this.buttonGroup1.getSelection().toString();
-        mgr.BHM.Mgr.sortData(SortSelected);
+        try {
+            String SortSelected = this.buttonGroup1.getSelection().toString();
+            mgr.BHM.Mgr.sortData(SortSelected);
+        } catch (Exception ex) {
         }
-        catch(Exception ex){}
         init();
     }
 
@@ -653,21 +654,11 @@ public class SearchTherapistUI extends javax.swing.JFrame {
         init();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-//                SearchTherapistUI p = new SearchTherapistUI();
-//                p.setVisible(true);
-
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton;
     private javax.swing.JCheckBox CB1;
     private javax.swing.JCheckBox CB2;
     private javax.swing.JCheckBox CB3;
@@ -677,6 +668,7 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox CB7;
     private javax.swing.JLabel ClickHereLabel;
     private javax.swing.JComboBox<String> Combo;
+    private javax.swing.JLabel HomeButton;
     private javax.swing.JSlider Slider;
     private javax.swing.JRadioButton SortExp;
     private javax.swing.JRadioButton SortFees;
@@ -688,10 +680,9 @@ public class SearchTherapistUI extends javax.swing.JFrame {
     private javax.swing.JLabel cityLabel;
     private javax.swing.JLabel feeLabel;
     private javax.swing.JLabel feeValLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

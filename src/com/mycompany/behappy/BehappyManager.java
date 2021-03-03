@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.behappy;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class BehappyManager {
     StartManager SMgr;
     LoginManager LMgr;
     FindTherapistManager FTMgr;
-    Manager Mgr;
+    ManagerST Mgr;
     ManagerMT MMTMgr;
     RManager RMgr;
     TakeTestManager TTMgr;
@@ -21,7 +17,7 @@ public class BehappyManager {
         SMgr=new StartManager();
         LMgr=new LoginManager();
         FTMgr=new FindTherapistManager();
-        Mgr=new Manager();
+        Mgr=new ManagerST();
         MMTMgr=new ManagerMT();
         RMgr=new RManager();
         TTMgr=new TakeTestManager();
@@ -41,7 +37,7 @@ public class BehappyManager {
         DM.SG = new MusicGUI(DM);
         DM.S1 = new Story1GUI(DM);
         DM.S2 = new Story2GUI(DM);
-        DM.L = new login(DM);
+        DM.L = new loginUI(DM);
         DM.RM = new Refreshment_Menu(DM);
         DM.TTU=new TakeTestUI(DM);
         DM.showSU();

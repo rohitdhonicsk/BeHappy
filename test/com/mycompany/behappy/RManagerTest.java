@@ -86,7 +86,7 @@ public class RManagerTest {
         System.out.println("getListOfSongs");
         RManager instance = new RManager();
         ArrayList expResult = null;
-        ArrayList result = instance.getListOfSongs();
+        ArrayList result = instance.getListOfMusic();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -131,7 +131,7 @@ public class RManagerTest {
         String title = "";
         RManager instance = new RManager();
         ArrayList expResult = null;
-        ArrayList result = instance.getSearchedSong(title);
+        ArrayList result = instance.getSearchedMusic(title);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -161,7 +161,7 @@ public class RManagerTest {
         String title = "";
         RManager instance = new RManager();
         SoothingMusic expResult = null;
-        SoothingMusic result = instance.getSelectedSong(title);
+        SoothingMusic result = instance.getSelectedMusic(title);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -175,7 +175,7 @@ public class RManagerTest {
         System.out.println("startPlayingSong");
         String title = "";
         RManager instance = new RManager();
-        instance.startPlayingSong(title);
+        instance.startPlayingMusic(title);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -187,7 +187,7 @@ public class RManagerTest {
     public void testPauseSong() {
         System.out.println("pauseSong");
         RManager instance = new RManager();
-        instance.pauseSong();
+        instance.pauseMusic();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -199,7 +199,7 @@ public class RManagerTest {
     public void testResumeSong() {
         System.out.println("resumeSong");
         RManager instance = new RManager();
-        instance.resumeSong();
+        instance.resumeMusic();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -211,7 +211,7 @@ public class RManagerTest {
     public void testStopSong() {
         System.out.println("stopSong");
         RManager instance = new RManager();
-        instance.stopSong();
+        instance.stopMusic();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -223,7 +223,7 @@ public class RManagerTest {
     public void testMain() {
         System.out.println("main");
         String[] args = null;
-        RManager.main(args);
+//        RManager.main(args);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

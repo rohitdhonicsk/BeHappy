@@ -7,7 +7,7 @@ package com.mycompany.behappy;
 
 /**
  *
- * @author soaka
+ * @author AKASH BARANWAL
  */
 public class Admin {
     private String username;

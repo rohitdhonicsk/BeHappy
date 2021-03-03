@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ROHIT
+ * @author ROHIT KUMAR GUPTA & AKASH BARANWAL
  */
 public class DisplayManager {
 
@@ -25,13 +25,13 @@ public class DisplayManager {
     MusicGUI SG;
     Story1GUI S1;
     Story2GUI S2;
-    login L;
+    loginUI L;
     Refreshment_Menu RM;
     TakeTestUI TTU;
     BehappyManager BHM;
     
     public DisplayManager() {
-
+        
     }
 
     public void hideALL() {

@@ -1,3 +1,7 @@
+<div align="center">
+<img src="https://github.com/rohitdhonicsk/BeHappy/blob/master/src/utils/logo.png">
+ </div>
+ <br>
 ## *NOTE*
 We have 2 version of this project : - One is Android APP(JAVA) which is private repo. and This Is Swing Framework Desktop Version.
 We are Currently working on Android app, We will soon deploy in play store and make it public.
